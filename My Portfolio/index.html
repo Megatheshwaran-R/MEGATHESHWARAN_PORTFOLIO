@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megatheshwaran R | Full Stack Developer & IoT Systems Engineer</title>
+<meta name="description" content="Portfolio of Megatheshwaran R — Full Stack Developer specializing in Core Java, Spring Boot, REST APIs, Java Servlets/JSP, MySQL, and connected IoT telemetry architectures. 2024 B.E. ECE graduate ready for immediate joining.">
+<meta name="keywords" content="Megatheshwaran R, Full Stack Developer, Java Full Stack, Spring Boot, Junior Java Developer, MySQL, Servlets, JSP, REST API, IoT, ESP8266, MQTT, MATLAB, Chennai, Bangalore, Coimbatore">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient background mesh & subtle scanline -->
+<div class="fw-backdrop" aria-hidden="true"></div>
+<div class="scanline-overlay" aria-hidden="true"></div>
+
+<!-- NAVIGATION BAR -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a href="#top" class="brand">
+      <img src="assets/megatheshwaran_logo.png" alt="Megathesh Logo" class="brand__logo">
+      <span class="brand__name">megathesh<span class="brand__accent">.dev</span></span>
+      <span class="brand__badge"><span class="pulse-dot"></span> FULL STACK DEV</span>
+    </a>
+    
+    <nav class="nav">
+      <a href="#overview" class="nav__link">Overview</a>
+      <a href="#simulator" class="nav__link">Live Console</a>
+      <a href="#github" class="nav__link">GitHub Live</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#stack" class="nav__link">Tech Stack</a>
+      <a href="#education" class="nav__link">Education</a>
+      <a href="#contact" class="nav__link nav__link--highlight">Contact</a>
+    </nav>
+
+    <div class="topbar__actions">
+      <button class="btn btn--cli" id="cliToggleBtn" title="Toggle Interactive UNIX Terminal">
+        <span class="btn__icon">$_</span> CLI Shell
+      </button>
+      <a href="Megatheeswaran_Resume.pdf" target="_blank" class="btn btn--primary" title="Download Resume PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume PDF
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="overview">
+    <div class="wrap hero__grid">
+      
+      <!-- HERO TEXT -->
+      <div class="hero__content">
+        <div class="status-pill">
+          <span class="status-pill__dot"></span>
+          <span>AVAILABLE FOR FULL STACK DEVELOPER & JUNIOR SOFTWARE ENGINEER ROLES</span>
+        </div>
+
+        <h1 class="hero__title">
+          Engineering Scalable <span class="text-gradient">Full-Stack Architectures</span> & Resilient Backends.
+        </h1>
+
+        <p class="hero__lead">
+          Full Stack Developer and 2024 B.E. ECE graduate with <strong>IAO Accredited Java Full Stack certification</strong> from Accord Info Matrix and enterprise internship exposure at <strong>VEI Technologies Pvt. Ltd.</strong> Specialized in building high-performance Java enterprise backends, responsive modern frontend interfaces, ACID-compliant MySQL data layers, and connected IoT telemetry platforms published in <strong>IJNIET Journal</strong>. Available for immediate joining.
+        </p>
+
+        <!-- KPI METRICS -->
+        <div class="kpi-grid">
+          <div class="kpi-card kpi-card--cyan">
+            <span class="kpi-card__val">Full Stack</span>
+            <span class="kpi-card__lbl">Java, Web & MySQL Solutions</span>
+          </div>
+          <div class="kpi-card kpi-card--green">
+            <span class="kpi-card__val">94.0%</span>
+            <span class="kpi-card__lbl">Distinction in EEE (Kongunadu)</span>
+          </div>
+          <div class="kpi-card kpi-card--purple">
+            <span class="kpi-card__val">IJNIET</span>
+            <span class="kpi-card__lbl">Peer-Reviewed Journal Publication</span>
+          </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--hero-primary">Explore Full-Stack Projects</a>
+          <a href="mailto:ravichandranmegathesh@gmail.com" class="btn btn--hero-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Contact Megathesh
+          </a>
+          <button class="btn btn--hero-outline" onclick="copyEmail()">
+            <span id="copyEmailText">Copy Email</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO PROFILE IMAGE & HARDWARE BADGE -->
+      <div class="hero__media">
+        <div class="profile-frame">
+          <div class="profile-frame__glow"></div>
+          <img src="assets/megatheshwaran_portrait.png" alt="Megatheshwaran R — Full Stack Developer" class="profile-frame__img">
+          
+          <!-- OVERLAY TECH HUD -->
+          <div class="hud-tag hud-tag--top">
+            <span class="hud-tag__label">SYSTEM STATUS</span>
+            <span class="hud-tag__val"><i class="dot-online"></i> READY TO JOIN IMMEDIATELY</span>
+          </div>
+
+          <div class="hud-tag hud-tag--bottom">
+            <span class="hud-tag__name">MEGATHESHWARAN R</span>
+            <span class="hud-tag__role">Full Stack Developer (Java & Web)</span>
+            <div class="hud-tag__chips">
+              <span>Full Stack</span><span>Spring Boot</span><span>MySQL</span><span>REST APIs</span><span>React Basics</span><span>IoT MQTT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIMULATOR CONSOLE -->
+  <section class="section section--dark" id="simulator">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// REAL-TIME FULL-STACK INTERACTION</p>
+        <h2 class="h2">Interactive Full-Stack & IoT Engineering Console</h2>
+        <p class="section-desc">Test real-time REST API dispatches with editable payloads, simulate live IoT MQTT sensor telemetry, and inspect computer vision character segmentation in your browser.</p>
+      </div>
+
+      <div class="sim-container">
+        
+        <!-- MODE NAVIGATION TABS -->
+        <div class="sim-nav">
+          <button class="sim-tab active" data-mode="fullstack">
+            <span>⚡</span> Full-Stack REST API & MVC Dispatcher
+          </button>
+          <button class="sim-tab" data-mode="iot">
+            <span>📡</span> IoT Telecom & Smart Sanitation Telemetry
+          </button>
+          <button class="sim-tab" data-mode="alpr">
+            <span>🚗</span> MATLAB License Plate Recognition (ALPR)
+          </button>
+        </div>
+
+        <!-- TAB 1: FULL-STACK API & MVC DISPATCHER -->
+        <div class="sim-tab-panel active" id="simPanel-fullstack">
+          <div class="sim-header">
+            <div class="sim-title">
+              <span class="sim-dot"></span> Java Web MVC -> Controller -> Service Layer -> MySQL PreparedStatement
+            </div>
+            <div class="sim-metrics">
+              <span class="pipeline-step" style="color:var(--green)">1. Controller Dispatch</span>
+              <span class="pipeline-step" style="color:var(--green)">2. Bean Validation</span>
+              <span class="pipeline-step" style="color:var(--green)">3. HikariCP Pool</span>
+              <span class="pipeline-step" style="color:var(--green)">4. ACID Transaction</span>
+            </div>
+          </div>
+
+          <div class="sim-screen" style="min-height:260px; background:#020509; padding:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dark); margin-bottom:6px; text-transform:uppercase;">
+                // INCOMING CLIENT HTTP PAYLOAD (EDITABLE JSON):
+              </div>
+              <textarea id="apiPayload" style="width:100%; height:190px; background:#060a12; color:#00f0ff; font-family:var(--font-mono); font-size:0.8rem; border:1px solid rgba(0,240,255,0.25); border-radius:6px; padding:10px; resize:none; outline:none;"></textarea>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dark); margin-bottom:6px; text-transform:uppercase;">
+                // SERVER MVC & DATABASE RESPONSE:
+              </div>
+              <pre id="apiResponseBox" style="margin:0; height:190px; background:#060a12; font-family:var(--font-mono); font-size:0.8rem; color:#00ff9d; border:1px solid rgba(0,255,157,0.25); border-radius:6px; padding:10px; overflow-y:auto; line-height:1.5; white-space:pre-wrap;">
+-- Select an endpoint below and click "Dispatch Full-Stack Request".
+-- Live HTTP response with latency benchmark will be rendered here.
+              </pre>
+            </div>
+          </div>
+
+          <div class="sim-controls">
+            <div class="control-group" style="flex-grow:1;">
+              <label for="apiEndpointSelect">Target API Route:</label>
+              <select id="apiEndpointSelect" class="form-select" style="min-width:300px;">
+                <option value="customer">Customer Admin: POST /api/v1/customers</option>
+                <option value="library">Library System: POST /api/v1/library/borrow</option>
+                <option value="iot">Telecom Energy: POST /api/v1/telecom/telemetry</option>
+              </select>
+            </div>
+
+            <div class="control-actions">
+              <button class="btn btn--primary" id="runApiBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Dispatch Full-Stack Request
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: IOT TELEMETRY PANEL -->
+        <div class="sim-tab-panel" id="simPanel-iot">
+          <div class="sim-header">
+            <div class="sim-title">
+              <span class="sim-dot"></span> ESP8266 NodeMCU & Blynk Cloud Telemetry Stream (MQTT Pub/Sub)
+            </div>
+            <div class="sim-metrics">
+              <span>TEMP: <strong id="tempDisp" class="text-cyan">28 °C</strong></span>
+              <span>FAN RELAY: <strong id="fanStatusDisp" class="text-dark">STANDBY (NORMAL)</strong></span>
+              <span>BIN FILL: <strong id="fillDisp" class="text-green">45 %</strong></span>
+              <span>STATUS: <strong id="cloudAlertDisp" class="text-green">NORMAL TELEMETRY (MQTT SYNC)</strong></span>
+            </div>
+          </div>
+
+          <div class="sim-screen">
+            <canvas id="iotCanvas" class="sim-canvas"></canvas>
+          </div>
+
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="tempSlider">RCR Ambient Temp (°C):</label>
+              <input type="range" id="tempSlider" min="15" max="50" step="1" value="28" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <label for="fillSlider">Waste Container Depth (%):</label>
+              <input type="range" id="fillSlider" min="5" max="100" step="5" value="45" class="form-range">
+            </div>
+
+            <div class="control-actions">
+              <button class="btn btn--sim" id="pauseIotBtn">Pause Stream</button>
+              <button class="btn btn--sim-amber" id="gasAlertBtn">Inject Gas/Flame Hazard</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: MATLAB LICENSE PLATE RECOGNITION PIPELINE -->
+        <div class="sim-tab-panel" id="simPanel-alpr">
+          <div class="sim-header">
+            <div class="sim-title">
+              <span class="sim-dot"></span> MATLAB 2024 ALPR — Morphological Segmentation & OCR Matrix
+            </div>
+            <div class="sim-metrics" id="alprResultText">
+              <strong>STAGE: Raw Vehicle Input Frame</strong> (Awaiting MATLAB pipeline execution)
+            </div>
+          </div>
+
+          <div class="sim-screen">
+            <canvas id="plateCanvas" class="sim-canvas"></canvas>
+          </div>
+
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="alprStepSelect">Algorithmic Stage:</label>
+              <select id="alprStepSelect" class="form-select">
+                <option value="raw">Step 1: Raw Vehicle Frame</option>
+                <option value="gray">Step 2: Grayscale & Contrast Equalization</option>
+                <option value="sobel">Step 3: Sobel Edge Detection & Dilation</option>
+                <option value="roi">Step 4: ROI Plate Bounding Box Isolation</option>
+                <option value="ocr">Step 5: Character Segmentation & OCR Match</option>
+              </select>
+            </div>
+
+            <div class="control-actions">
+              <button class="btn btn--primary" id="alprRunBtn">Run Full MATLAB Pipeline</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DYNAMIC GITHUB ACTIVITY SECTION -->
+  <section class="section" id="github">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// REAL-TIME GITHUB TELEMETRY</p>
+        <h2 class="h2">Live GitHub Activity & Open Source Code</h2>
+        <p class="section-desc">Dynamic telemetry synchronized live with the GitHub REST API (<a href="https://github.com/Megatheshwaran-R" target="_blank" style="color:var(--cyan)">github.com/Megatheshwaran-R</a>).</p>
+      </div>
+
+      <div class="github-card">
+        <div class="github-user-bar">
+          <div class="github-user-info">
+            <img src="https://github.com/Megatheshwaran-R.png" alt="Megatheshwaran-R GitHub" class="github-avatar" onerror="this.src='assets/megatheshwaran_portrait.png'">
+            <div>
+              <div class="github-handle">Megatheshwaran R (@Megatheshwaran-R)</div>
+              <div class="github-bio" id="githubUserBio">Java Full Stack Developer | B.E. ECE | Core Java, Spring Boot, JDBC, JSP & Servlets, MySQL</div>
+            </div>
+          </div>
+          <div class="github-stats-chips">
+            <span class="github-chip" id="githubRepoCount"><strong>1</strong> Public Repo</span>
+            <span class="github-chip" id="githubFollowerCount"><strong>Active</strong> Profile</span>
+            <span class="github-chip"><span class="pulse-dot"></span> Live Synced</span>
+          </div>
+        </div>
+
+        <div class="github-repos-grid" id="githubRepoGrid">
+          <!-- Live Repos dynamically loaded from GitHub API, with clean fallback -->
+          <div class="repo-card">
+            <div>
+              <div class="repo-card__name">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>Iot_Energy_Monitoring_System</span>
+              </div>
+              <div class="repo-card__desc">
+                Developed an IoT-based energy monitoring and management system for telecom operators and Remote Computer Rooms (RCR) using the Blynk server to monitor energy consumption. Published in IJNIET.
+              </div>
+            </div>
+            <div class="repo-card__meta">
+              <span class="lang-badge">
+                <span class="lang-dot"></span> C++ / Arduino
+              </span>
+              <a href="https://github.com/Megatheshwaran-R/Iot_Energy_Monitoring_System" target="_blank" class="btn btn--sm btn--github">View Repo →</a>
+            </div>
+          </div>
+
+          <div class="repo-card">
+            <div>
+              <div class="repo-card__name">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>customer-information-system</span>
+              </div>
+              <div class="repo-card__desc">
+                Multi-tier enterprise customer administration system with Java Servlets, JSP, JDBC connection pooling, and transactional MySQL relational database.
+              </div>
+            </div>
+            <div class="repo-card__meta">
+              <span class="lang-badge">
+                <span class="lang-dot" style="background:#00f0ff;"></span> Java / MVC
+              </span>
+              <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">View Repo →</a>
+            </div>
+          </div>
+
+          <div class="repo-card">
+            <div>
+              <div class="repo-card__name">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>library-management-engine</span>
+              </div>
+              <div class="repo-card__desc">
+                Core Java book inventory and circulation engine featuring role-based privileges, automated overdue fines, and PreparedStatement persistence.
+              </div>
+            </div>
+            <div class="repo-card__meta">
+              <span class="lang-badge">
+                <span class="lang-dot" style="background:#ffaa00;"></span> Core Java / JDBC
+              </span>
+              <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">View Repo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE & INTERNSHIPS -->
+  <section class="section section--dark" id="experience">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// PRODUCTION EXPERIENCE & ACCREDITED TRAINING</p>
+        <h2 class="h2">Where Engineering Meets Execution</h2>
+        <p class="section-desc">Hands-on software development lifecycle exposure, accredited full-stack Java training, and published IoT research.</p>
+      </div>
+
+      <!-- EXPERIENCE CARD 1: VEI TECHNOLOGIES -->
+      <div class="experience-card">
+        <div class="exp-header">
+          <div>
+            <h3 class="exp-title">Full Stack Development Intern</h3>
+            <div class="exp-company">VEI Technologies Pvt. Ltd., Chennai</div>
+          </div>
+          <div class="exp-date">Feb 15, 2024 — Mar 2, 2024</div>
+        </div>
+
+        <div class="exp-body">
+          <div class="exp-block">
+            <h4 class="exp-block__title">⚡ Software Development Life Cycle (SDLC) & MVC Architecture</h4>
+            <ul class="exp-list">
+              <li>Gained practical exposure to industry software development workflows, clean code conventions, and standard <strong>SDLC best practices</strong>.</li>
+              <li>Assisted in analyzing and reviewing <strong>Java-based web application codebases</strong> to understand MVC architecture, request dispatching, and backend database connectivity.</li>
+              <li>Participated in active code walkthroughs focusing on <strong>OOP modularization</strong>, relational database normalization, and frontend-to-backend data binding.</li>
+              <li>Attended hands-on technical sessions covering <strong>IoT sensor integration</strong>, embedded microcontroller programming, and real-time cloud data pipelines.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE CARD 2: ACCORD INFO MATRIX -->
+      <div class="experience-card experience-card--sub">
+        <div class="exp-header">
+          <div>
+            <h3 class="exp-title">Java and Web Technology Development (Java Full Stack)</h3>
+            <div class="exp-company">Accord Info Matrix (IAO Accredited), Chennai</div>
+          </div>
+          <div class="exp-date">Certified 2024 — 2025</div>
+        </div>
+
+        <div class="exp-body">
+          <div class="exp-block">
+            <h4 class="exp-block__title">🏆 Rigorous Multi-Tier Enterprise Development Program</h4>
+            <ul class="exp-list">
+              <li>Completed a rigorous hands-on program covering <strong>Core Java</strong>, OOP fundamentals (Inheritance, Polymorphism, Encapsulation, Abstraction), Exception Handling, and the Java Collections Framework.</li>
+              <li>Mastered Java web technologies including <strong>JDBC connectivity</strong> (Connection Management, Statements, PreparedStatements, ResultSets), <strong>Java Servlets</strong>, <strong>JSP (JavaServer Pages)</strong>, and Apache Tomcat server deployment.</li>
+              <li>Engineered relational database schemas in <strong>MySQL</strong> with strict DDL/DML commands, CRUD operations, foreign key constraints, and multi-table joins.</li>
+              <li>Earned dual accredited credentials from the <strong>International Accreditation Organization (IAO)</strong> in <strong>Java Technology (ID: AIM JT 18529)</strong> and <strong>Web Application Development (ID: AIM WD 18530)</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS SHOWCASE -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// FEATURED REPOSITORIES & ENGINEERING WORK</p>
+        <h2 class="h2">Software, IoT & Web Engineering Portfolio</h2>
+        <p class="section-desc">Search and inspect projects across Java enterprise web applications, real-time IoT cloud telemetry, and MATLAB image processing.</p>
+      </div>
+
+      <!-- DYNAMIC SEARCH & FILTER TOOLBAR -->
+      <div class="project-toolbar">
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="java">Full Stack & Java</button>
+          <button class="filter-btn" data-filter="iot">IoT & Telemetry</button>
+          <button class="filter-btn" data-filter="matlab">Computer Vision & MATLAB</button>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="project-search-box">
+            <span class="project-search-icon">🔍</span>
+            <input type="text" id="projectSearchInput" placeholder="Search tech, e.g. Java, MySQL, MQTT, Spring..." autocomplete="off">
+          </div>
+          <span class="project-count-badge" id="projectCount">Showing 6 of 6 projects</span>
+        </div>
+      </div>
+
+      <!-- PROJECTS GRID -->
+      <div class="projects-grid" id="projectsGrid">
+        
+        <!-- PROJECT 1: IOT TELECOM ENERGY -->
+        <article class="project-card" data-category="iot">
+          <div class="project-card__img-wrap">
+            <img src="assets/iot_sensor_visual.jpg" alt="IoT Energy Saving in Telecom Computer Rooms" class="project-card__img">
+          </div>
+          <div class="project-card__header">
+            <span class="project-tag project-tag--green">IoT / Cloud Telemetry</span>
+            <span class="project-status">IJNIET Published Paper</span>
+          </div>
+          <h3 class="project-card__title">IoT Energy Saving & Management for Telecom Operators & RCRs</h3>
+          <p class="project-card__desc">
+            Remote climate telemetry and energy conservation platform designed to optimize power consumption across telecom operators' remote computer rooms (RCRs). Features NodeMCU (ESP8266), DHT11 sensing, automated relay cooling actuation at &gt;34°C, MQ gas/flame hazard trip, and Blynk cloud telemetry over MQTT. Published in IJNIET Journal.
+          </p>
+          <div class="project-card__tech">
+            <span>NodeMCU (ESP8266)</span><span>Blynk IoT Cloud</span><span>MQTT Protocol</span><span>DHT11</span><span>Relays</span><span>IJNIET Paper</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('iot-energy')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R/Iot_Energy_Monitoring_System" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: SMART GARBAGE MONITORING -->
+        <article class="project-card" data-category="iot">
+          <div class="project-card__header">
+            <span class="project-tag project-tag--cyan">IoT / Smart City</span>
+            <span class="project-status">ThingSpeak Cloud</span>
+          </div>
+          <h3 class="project-card__title">Smart Garbage Monitoring System using IoT</h3>
+          <p class="project-card__desc">
+            Civic cleanliness and municipal sanitation prototype utilizing HC-SR04 ultrasonic distance sensors interfaced with NodeMCU (ESP8266). Continuously tracks bin fill levels, transmits telemetry over Wi-Fi to ThingSpeak cloud, and triggers automated MATLAB alert emails when bins exceed 85% capacity to optimize sanitation truck dispatch routes.
+          </p>
+          <div class="project-card__tech">
+            <span>NodeMCU ESP8266</span><span>HC-SR04 Ultrasonic</span><span>ThingSpeak Cloud</span><span>MATLAB Analysis</span><span>Email Alerts</span><span>Arduino IDE</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('smart-garbage')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: LICENSE PLATE RECOGNITION -->
+        <article class="project-card" data-category="matlab">
+          <div class="project-card__img-wrap">
+            <img src="assets/license_plate_visual.jpg" alt="MATLAB License Plate Recognition" class="project-card__img">
+          </div>
+          <div class="project-card__header">
+            <span class="project-tag project-tag--amber">Computer Vision / MATLAB</span>
+            <span class="project-status">Demonstrated at Excel Engg</span>
+          </div>
+          <h3 class="project-card__title">Automated License Plate Recognition (ALPR) System</h3>
+          <p class="project-card__desc">
+            Computer vision pipeline in MATLAB engineered to detect license plates from vehicle imagery under irregular illumination. Implements contrast adjustment, 2D median filtering, Sobel edge gradient detection, morphological dilation, Region of Interest (ROI) bounding box localization, and character template matching OCR. Demonstrated at National Level Technical Symposium.
+          </p>
+          <div class="project-card__tech">
+            <span>MATLAB</span><span>Image Processing Toolbox</span><span>Morphological Filters</span><span>ROI Segmentation</span><span>OCR Template Match</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('license-plate')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">Symposium Project →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: ONLINE LIBRARY MANAGEMENT SYSTEM -->
+        <article class="project-card" data-category="java">
+          <div class="project-card__header">
+            <span class="project-tag project-tag--cyan">Core Java / JDBC</span>
+            <span class="project-status">Eclipse IDE</span>
+          </div>
+          <h3 class="project-card__title">Online Library Management & Circulation Engine</h3>
+          <p class="project-card__desc">
+            Comprehensive library management and book circulation application developed using Core Java and JDBC. Engineered a secure role-based login system (Admin vs Member), book inventory modules to add, delete, update, and search books, and configured transactional database connectivity with MySQL using PreparedStatements to ensure data consistency during check-in, checkout, and penalty calculations.
+          </p>
+          <div class="project-card__tech">
+            <span>Core Java</span><span>JDBC</span><span>MySQL</span><span>PreparedStatements</span><span>Eclipse IDE</span><span>ACID Transactions</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('library-system')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: CUSTOMER INFORMATION MANAGEMENT SYSTEM -->
+        <article class="project-card" data-category="java">
+          <div class="project-card__header">
+            <span class="project-tag project-tag--purple">Java Web MVC / Servlets</span>
+            <span class="project-status">Apache Tomcat</span>
+          </div>
+          <h3 class="project-card__title">Customer Information Management System</h3>
+          <p class="project-card__desc">
+            Responsive multi-tier web application built with Java Servlets, JSP, JDBC, and MySQL to centralize enterprise customer records and eliminate spreadsheet redundancies. Implemented complete CRUD workflows allowing staff to register new clients, query profile records, and perform atomic updates. Utilizes JSP for view presentation and Servlets for controller routing.
+          </p>
+          <div class="project-card__tech">
+            <span>Java Servlets</span><span>JSP</span><span>JDBC</span><span>MySQL</span><span>HTML5 / CSS3</span><span>Tomcat Server</span><span>MVC</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('customer-mgmt')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 6: SPRING BOOT E-COMMERCE API -->
+        <article class="project-card" data-category="java">
+          <div class="project-card__header">
+            <span class="project-tag project-tag--green">Spring Boot / Microservices</span>
+            <span class="project-status">REST / JWT Security</span>
+          </div>
+          <h3 class="project-card__title">Scalable E-Commerce REST API & Microservice Engine</h3>
+          <p class="project-card__desc">
+            High-throughput backend service providing enterprise RESTful endpoints for catalog filtering, authenticated shopping cart state, order workflows, and role-based administration. Engineered with Spring Boot, Spring Security (JWT auth), Spring Data JPA / Hibernate, and ACID transaction locks to prevent concurrency inventory anomalies.
+          </p>
+          <div class="project-card__tech">
+            <span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>Hibernate / JPA</span><span>MySQL</span><span>REST API</span><span>Postman</span>
+          </div>
+          <div class="project-card__footer">
+            <button class="btn btn--inspect" onclick="openArchitectureModal('spring-api')">Inspect Architecture</button>
+            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL STACK & SKILL MATRIX -->
+  <section class="section section--dark" id="stack">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// FULL-STACK ARCHITECTURE & TECH STACK</p>
+        <h2 class="h2">What Runs Under the Hood</h2>
+        <p class="section-desc">Core competencies across Java enterprise technologies, relational database design, frontend UIs, and development environments.</p>
+      </div>
+
+      <div class="stack-matrix">
+        
+        <!-- COL 1 -->
+        <div class="stack-box stack-box--cyan">
+          <h3 class="stack-box__title"><span class="icon">☕</span> Java & Backend Engineering</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">Core Java (JDK, JRE, JVM)</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">OOP Principles & Collections</span> <span class="badge badge--prof">Core</span></li>
+            <li><span class="skill-name">JDBC & PreparedStatements</span> <span class="badge badge--prof">Production</span></li>
+            <li><span class="skill-name">Java Servlets & JSP</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">Spring Boot & REST APIs</span> <span class="badge">Proficient</span></li>
+            <li><span class="skill-name">Apache Tomcat Deployment</span> <span class="badge">Advanced</span></li>
+          </ul>
+        </div>
+
+        <!-- COL 2 -->
+        <div class="stack-box stack-box--amber">
+          <h3 class="stack-box__title"><span class="icon">🗄️</span> Databases & Persistence</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">MySQL Relational DB</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">Schema Design & DDL / DML</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">CRUD Operations & Joins</span> <span class="badge badge--prof">Core</span></li>
+            <li><span class="skill-name">Constraints & Foreign Keys</span> <span class="badge">Advanced</span></li>
+            <li><span class="skill-name">ACID Transaction Safety</span> <span class="badge">Proficient</span></li>
+            <li><span class="skill-name">Hibernate / JPA Basics</span> <span class="badge">Proficient</span></li>
+          </ul>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="stack-box stack-box--green">
+          <h3 class="stack-box__title"><span class="icon">📡</span> IoT & Edge Embedded Systems</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">NodeMCU ESP8266 (Wi-Fi SoC)</span> <span class="badge badge--prof">Specialist</span></li>
+            <li><span class="skill-name">MQTT Pub/Sub Protocol</span> <span class="badge badge--prof">Production</span></li>
+            <li><span class="skill-name">HC-SR04 Ultrasonic Distance</span> <span class="badge">Advanced</span></li>
+            <li><span class="skill-name">DHT11 Temp & Humidity Sensor</span> <span class="badge">Advanced</span></li>
+            <li><span class="skill-name">MQ Gas & Flame Sensors</span> <span class="badge">Proficient</span></li>
+            <li><span class="skill-name">Blynk Server & ThingSpeak</span> <span class="badge badge--prof">Specialist</span></li>
+          </ul>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="stack-box stack-box--purple">
+          <h3 class="stack-box__title"><span class="icon">🌐</span> Web & Frontend Technologies</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">HTML5 (Semantic Web Standards)</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">CSS3 (Flexbox, Grid, Responsive)</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">JavaScript (ES6+, DOM Manipulation)</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">Form Validation & Event Handling</span> <span class="badge">Advanced</span></li>
+            <li><span class="skill-name">RESTful JSON Consumption</span> <span class="badge">Proficient</span></li>
+            <li><span class="skill-name">React Components & UI State</span> <span class="badge">Proficient</span></li>
+          </ul>
+        </div>
+
+        <!-- COL 5 -->
+        <div class="stack-box stack-box--orange">
+          <h3 class="stack-box__title"><span class="icon">🛠️</span> Developer Tools & Environments</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">Eclipse IDE</span> <span class="badge badge--prof">Primary IDE</span></li>
+            <li><span class="skill-name">Visual Studio Code (VS Code)</span> <span class="badge badge--prof">Primary IDE</span></li>
+            <li><span class="skill-name">Git & GitHub Actions CI/CD</span> <span class="badge badge--prof">Advanced</span></li>
+            <li><span class="skill-name">MATLAB & Image Processing</span> <span class="badge">Simulation</span></li>
+            <li><span class="skill-name">Arduino IDE (Firmware Flashing)</span> <span class="badge">Hardware</span></li>
+            <li><span class="skill-name">Postman API Testing</span> <span class="badge">Testing</span></li>
+          </ul>
+        </div>
+
+        <!-- COL 6 -->
+        <div class="stack-box stack-box--blue">
+          <h3 class="stack-box__title"><span class="icon">📐</span> Architecture & Engineering</h3>
+          <ul class="stack-box__list">
+            <li><span class="skill-name">MVC (Model-View-Controller)</span> <span class="badge badge--prof">Architecture</span></li>
+            <li><span class="skill-name">SDLC & Clean Code Conventions</span> <span class="badge badge--prof">Process</span></li>
+            <li><span class="skill-name">DAO / DTO Design Patterns</span> <span class="badge">Design</span></li>
+            <li><span class="skill-name">Image ROI Character Segmentation</span> <span class="badge">Vision</span></li>
+            <li><span class="skill-name">Remote Energy Optimization</span> <span class="badge badge--prof">Research</span></li>
+            <li><span class="skill-name">Exception Handling & Logging</span> <span class="badge">Reliability</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="eyebrow">// ACADEMIC HONORS & VERIFIED CREDENTIALS</p>
+        <h2 class="h2">Education & Certifications</h2>
+      </div>
+
+      <div class="edu-grid">
+        
+        <!-- DEGREE 1: B.E. ECE -->
+        <div class="edu-card edu-card--college">
+          <div class="edu-card__bg-img"></div>
+          <div class="edu-card__icon">🎓</div>
+          <div class="edu-card__content">
+            <h3 class="edu-card__degree">B.E. in Electronics & Communication Engineering</h3>
+            <div class="edu-card__school">Kongunadu College of Engineering and Technology, Tholurpatti</div>
+            <div class="edu-card__meta">
+              <span>2021 — 2024</span>
+              <span class="grade-badge">CGPA: 7.54 / 10.0</span>
+            </div>
+            <p style="margin-top:12px; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+              Completed comprehensive coursework in Microprocessors, Digital System Design, and Embedded Computing. Lead author on peer-reviewed IoT telemetry research paper.
+            </p>
+          </div>
+        </div>
+
+        <!-- DEGREE 2: DIPLOMA EEE -->
+        <div class="edu-card">
+          <div class="edu-card__icon">⚡</div>
+          <div class="edu-card__content">
+            <h3 class="edu-card__degree">Diploma in Electrical & Electronics Engineering (EEE)</h3>
+            <div class="edu-card__school">Kongunadu Polytechnic College, Tholurpatti</div>
+            <div class="edu-card__meta">
+              <span>2018 — 2021</span>
+              <span class="grade-badge">94.0% with Distinction</span>
+            </div>
+            <p style="margin-top:12px; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+              Graduated with top Distinction honors. Rigorous grounding in electrical circuitry, control systems, and instrumentation.
+            </p>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="edu-card">
+          <div class="edu-card__icon">🏆</div>
+          <div class="edu-card__content">
+            <h3 class="edu-card__degree">Professional Certifications</h3>
+            <ul class="cert-list">
+              <li>
+                <strong>Java Technology Certification</strong> — International Accreditation Organization (IAO) | ID: AIM JT 18529
+              </li>
+              <li>
+                <strong>Web Application Development</strong> — International Accreditation Organization (IAO) | ID: AIM WD 18530
+              </li>
+              <li>
+                <strong>Java Full Stack Developer Program</strong> — Accord Info Matrix (2024)
+              </li>
+              <li>
+                <strong>IoT & Microcontroller Workshop Certification</strong> — VEI Technologies Pvt. Ltd. (2024)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PUBLICATIONS & SYMPOSIUMS -->
+        <div class="edu-card">
+          <div class="edu-card__icon">📜</div>
+          <div class="edu-card__content">
+            <h3 class="edu-card__degree">Publications & Co-Curricular</h3>
+            <ul class="cert-list">
+              <li>
+                <strong>Peer-Reviewed Journal Publication:</strong> "Energy Saving and Management Using MQTT Protocol in Telecom Operators' Remote Computer Room" published in <em>International Journal of New Innovations in Engineering and Technology (IJNIET)</em>.
+              </li>
+              <li>
+                <strong>National Level Symposium Presentation:</strong> "Wireless Communication" at Gnyanamani Engineering College, Namakkal.
+              </li>
+              <li>
+                <strong>Live Project Demonstration:</strong> "License Plate Recognition using MATLAB" at Excel Engineering College, Tiruchengode.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC CONTACT & RECRUITER ACTION FOOTER -->
+  <section class="section section--dark" id="contact">
+    <div class="wrap wrap--narrow">
+      <div class="contact-box">
+        <p class="eyebrow">// LET'S BUILD SCALABLE SYSTEMS</p>
+        <h2 class="h2">Get In Touch With Megatheshwaran</h2>
+        <p class="contact-desc">
+          Actively seeking full-time <strong>Full Stack Developer</strong>, <strong>Java Developer</strong>, and <strong>Junior Software Engineer</strong> roles. Based in <strong>Chennai</strong> and open to relocation to <strong>Bangalore, Hyderabad, or Coimbatore</strong>. Available for immediate joining.
+        </p>
+
+        <!-- DYNAMIC CONTACT FORM -->
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Hiring Manager / Recruiter" required>
+            </div>
+            <div class="form-field">
+              <label for="contactEmail">Your Work Email</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="e.g. hr@company.com" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contactSubject">Subject / Role Opportunity</label>
+            <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Full Stack Java Developer Opportunity" required>
+          </div>
+          <div class="form-field">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" class="form-textarea" placeholder="Hello Megathesh, we would love to invite you for a technical interview..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--hero-primary" id="contactSubmitBtn" style="width:100%; justify-content:center;">
+            <span>✉️</span> Send Message
+          </button>
+        </form>
+
+        <div class="contact-info-grid">
+          <a href="mailto:ravichandranmegathesh@gmail.com" class="contact-item">
+            <span class="contact-item__icon">✉️</span>
+            <div>
+              <span class="contact-item__lbl">Email Address</span>
+              <span class="contact-item__val">ravichandranmegathesh@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="tel:+919092734889" class="contact-item">
+            <span class="contact-item__icon">📞</span>
+            <div>
+              <span class="contact-item__lbl">Phone Number</span>
+              <span class="contact-item__val">+91 9092734889</span>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/megathesh-ravichandran-1053061a0" target="_blank" class="contact-item">
+            <span class="contact-item__icon">💼</span>
+            <div>
+              <span class="contact-item__lbl">LinkedIn Profile</span>
+              <span class="contact-item__val">megathesh-ravichandran-1053061a0</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/Megatheshwaran-R" target="_blank" class="contact-item">
+            <span class="contact-item__icon">💻</span>
+            <div>
+              <span class="contact-item__lbl">GitHub Repositories</span>
+              <span class="contact-item__val">github.com/Megatheshwaran-R</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-action-bar">
+          <a href="Megatheeswaran_Resume.pdf" target="_blank" class="btn btn--hero-primary">Download Resume PDF</a>
+          <button class="btn btn--hero-secondary" onclick="copyEmail()">Copy Email Address</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- DYNAMIC ARCHITECTURE MODAL OVERLAY -->
+<div class="modal-overlay" id="architectureModal" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <h3 class="modal-title" id="modalTitle">System Architecture Deep Dive</h3>
+        <div class="modal-subtitle" id="modalSubtitle">Engineering Specifications & Workflow</div>
+      </div>
+      <button class="modal-close" id="modalCloseBtn">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- Injected dynamically via script.js -->
+    </div>
+  </div>
+</div>
+
+<!-- INTERACTIVE UNIX CLI TERMINAL MODAL DRAWER -->
+<div class="cli-drawer" id="cliDrawer" aria-hidden="true">
+  <div class="cli-window">
+    <div class="cli-bar">
+      <div class="cli-dots">
+        <span class="dot dot--red" id="cliCloseBtn"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+      </div>
+      <div class="cli-title">ttyUSB0 — megathesh@fullstack-core:~#</div>
+      <button class="cli-minimize" id="cliMinimizeBtn">✕ Close [ESC]</button>
+    </div>
+
+    <div class="cli-body" id="cliBody">
+      <div class="cli-line fg-dim">Welcome to Megatheshwaran R's Full-Stack Engineering Terminal (v3.0 Live)</div>
+      <div class="cli-line fg-cyan">Type <span class="fg-amber">'help'</span> for available commands, <span class="fg-amber">'git repos'</span> for live GitHub repos, or <span class="fg-amber">'cat resume'</span>.</div>
+      <div class="cli-output" id="cliOutput"></div>
+    </div>
+
+    <div class="cli-input-bar">
+      <span class="cli-prompt">megathesh@fullstack:~$</span>
+      <input type="text" id="cliInput" class="cli-input" autofocus autocomplete="off" spellcheck="false" placeholder="Type a command (e.g. help, git status, git repos, run api, cat fullstack)...">
+    </div>
+  </div>
+</div>
+
+<!-- TOAST MESSAGE CONTAINER -->
+<div class="toast-msg" id="toastMsg">Email copied to clipboard!</div>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year"></span> Megatheshwaran R. Engineered for Scalable Full-Stack Backends & Connected IoT Systems.</span>
+    <span class="footer__status"><i class="statusdot"></i> STATUS: GitHub Actions & Telemetry Active</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

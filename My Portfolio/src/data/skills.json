@@ -1,0 +1,201 @@
+{
+  "categories": [
+    {
+      "id": "backend",
+      "label": "Backend Engineering",
+      "icon": "FaServer",
+      "description": "Architecting resilient, secure, and transactional server-side systems."
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend & UI",
+      "icon": "FaReact",
+      "description": "Crafting performant, accessible, and responsive user interfaces."
+    },
+    {
+      "id": "database",
+      "label": "Databases & Storage",
+      "icon": "FaDatabase",
+      "description": "Schema modeling, query optimization, indexing, and transactional integrity."
+    },
+    {
+      "id": "tools",
+      "label": "Tools & DevOps",
+      "icon": "FaTools",
+      "description": "Version control, build automation, containerization, and API workflows."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Java (Core & Enterprise)",
+      "category": "backend",
+      "proficiency": 95,
+      "level": "Expert",
+      "experience": "Core OOP, Collections, Multithreading, Generics, Stream API, Exception Handling",
+      "tags": ["OOP", "Collections", "J2EE", "JVM", "Streams"],
+      "icon": "FaJava"
+    },
+    {
+      "name": "Spring Boot",
+      "category": "backend",
+      "proficiency": 90,
+      "level": "Advanced",
+      "experience": "Auto-configuration, Spring MVC, REST controllers, Dependency Injection, Actuator",
+      "tags": ["Spring MVC", "IoC", "REST APIs", "Microservices"],
+      "icon": "SiSpringboot"
+    },
+    {
+      "name": "RESTful APIs & Microservices",
+      "category": "backend",
+      "proficiency": 92,
+      "level": "Advanced",
+      "experience": "API contract design, HTTP status codes, JSON payload mapping, OpenAPI/Swagger docs",
+      "tags": ["REST", "JSON", "HTTP", "Microservices"],
+      "icon": "TbApi"
+    },
+    {
+      "name": "Spring Security & JWT",
+      "category": "backend",
+      "proficiency": 86,
+      "level": "Advanced",
+      "experience": "Role-based access control (RBAC), stateless token auth, password hashing with BCrypt",
+      "tags": ["JWT", "RBAC", "Auth", "BCrypt"],
+      "icon": "SiSpringsecurity"
+    },
+    {
+      "name": "Hibernate / JPA & JDBC",
+      "category": "backend",
+      "proficiency": 90,
+      "level": "Advanced",
+      "experience": "ORM entity mappings, criteria queries, connection pooling (HikariCP), ACID transactions",
+      "tags": ["ORM", "JPA", "JDBC", "ACID", "Transactions"],
+      "icon": "SiHibernate"
+    },
+    {
+      "name": "Servlets & JSP",
+      "category": "backend",
+      "proficiency": 88,
+      "level": "Advanced",
+      "experience": "MVC architecture, request dispatching, session management, custom tag libraries",
+      "tags": ["MVC", "Servlets", "JSP", "Tomcat"],
+      "icon": "FaServer"
+    },
+    {
+      "name": "React",
+      "category": "frontend",
+      "proficiency": 88,
+      "level": "Advanced",
+      "experience": "Functional components, custom hooks, state management, component lifecycle, virtual DOM",
+      "tags": ["React 18", "Hooks", "Virtual DOM", "SPA"],
+      "icon": "FaReact"
+    },
+    {
+      "name": "JavaScript (ES6+) & TypeScript",
+      "category": "frontend",
+      "proficiency": 90,
+      "level": "Advanced",
+      "experience": "Async/Await, Promises, Closures, DOM manipulation, modular architecture, strict typing",
+      "tags": ["ES6+", "TypeScript", "Async", "Event Loop"],
+      "icon": "SiJavascript"
+    },
+    {
+      "name": "HTML5 & Semantic Web",
+      "category": "frontend",
+      "proficiency": 95,
+      "level": "Expert",
+      "experience": "Semantic structuring, WAI-ARIA standards, SEO markup, cross-browser compatibility",
+      "tags": ["HTML5", "ARIA", "Semantic", "SEO"],
+      "icon": "FaHtml5"
+    },
+    {
+      "name": "Tailwind CSS & CSS3",
+      "category": "frontend",
+      "proficiency": 92,
+      "level": "Advanced",
+      "experience": "Utility-first architecture, Flexbox, CSS Grid, media queries, keyframe animations",
+      "tags": ["Tailwind", "Responsive", "Flexbox", "Grid"],
+      "icon": "SiTailwindcss"
+    },
+    {
+      "name": "Angular Fundamentals",
+      "category": "frontend",
+      "proficiency": 80,
+      "level": "Proficient",
+      "experience": "Component-based architecture, two-way data binding, TypeScript integration, routing",
+      "tags": ["Angular", "TypeScript", "Components", "Data Binding"],
+      "icon": "FaAngular"
+    },
+    {
+      "name": "MySQL",
+      "category": "database",
+      "proficiency": 92,
+      "level": "Advanced",
+      "experience": "Relational schema design, normalization (1NF-3NF), indexing, joins, stored procedures",
+      "tags": ["SQL", "Indexing", "Normalization", "Joins"],
+      "icon": "SiMysql"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "database",
+      "proficiency": 84,
+      "level": "Proficient",
+      "experience": "ACID compliance, complex querying, constraints, relational analytics",
+      "tags": ["Postgres", "SQL", "Relational", "ACID"],
+      "icon": "SiPostgresql"
+    },
+    {
+      "name": "MongoDB",
+      "category": "database",
+      "proficiency": 80,
+      "level": "Proficient",
+      "experience": "Document-oriented storage, BSON modeling, aggregation pipelines, dynamic schemas",
+      "tags": ["NoSQL", "BSON", "Collections", "Aggregation"],
+      "icon": "SiMongodb"
+    },
+    {
+      "name": "Git & GitHub",
+      "category": "tools",
+      "proficiency": 90,
+      "level": "Advanced",
+      "experience": "Branching strategies, pull requests, merge conflict resolution, CI/CD integrations",
+      "tags": ["Git", "GitHub", "VCS", "Pull Requests"],
+      "icon": "FaGitAlt"
+    },
+    {
+      "name": "Docker",
+      "category": "tools",
+      "proficiency": 82,
+      "level": "Proficient",
+      "experience": "Dockerfile creation, multi-stage builds, containerization of Java & web applications",
+      "tags": ["Docker", "Containers", "DevOps", "Microservices"],
+      "icon": "FaDocker"
+    },
+    {
+      "name": "Maven",
+      "category": "tools",
+      "proficiency": 88,
+      "level": "Advanced",
+      "experience": "POM dependency management, lifecycle build phases, plugins, artifact packaging",
+      "tags": ["Maven", "Build Automation", "POM", "Packaging"],
+      "icon": "SiApachemaven"
+    },
+    {
+      "name": "Postman",
+      "category": "tools",
+      "proficiency": 92,
+      "level": "Advanced",
+      "experience": "Endpoint verification, environment variables, pre-request scripts, automated test suites",
+      "tags": ["API Testing", "Postman", "Assertions", "Automation"],
+      "icon": "SiPostman"
+    },
+    {
+      "name": "IDEs & Tooling (VS Code, Eclipse)",
+      "category": "tools",
+      "proficiency": 94,
+      "level": "Expert",
+      "experience": "Advanced debugging, profiling, hot reloading, extensions ecosystem",
+      "tags": ["VS Code", "Eclipse", "Debugging", "Workflow"],
+      "icon": "VscVscode"
+    }
+  ]
+}

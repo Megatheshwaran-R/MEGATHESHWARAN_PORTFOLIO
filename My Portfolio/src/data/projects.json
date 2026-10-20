@@ -1,0 +1,164 @@
+[
+  {
+    "id": "customer-management-system",
+    "title": "Customer Information Management System",
+    "subtitle": "Enterprise Record Administration & Multi-Role Data Governance",
+    "category": "Full Stack",
+    "featured": true,
+    "overview": "A production-grade customer record management system built with Java enterprise technologies, featuring secure session management, role-based access control, and normalized relational storage.",
+    "problem": "Enterprises struggle with fragmented customer data across decentralized spreadsheets, resulting in data duplication, lack of audit trails, and security vulnerabilities during client data retrieval and updates.",
+    "solution": "Architected a multi-tier web application utilizing JSP and Java Servlets with connection-pooled JDBC querying MySQL. Implemented strict server-side validation, SQL injection prevention through PreparedStatements, and a responsive administrative dashboard.",
+    "techStack": ["Java", "JSP", "Servlets", "JDBC", "MySQL", "JavaScript", "HTML5", "CSS3", "Apache Tomcat"],
+    "keyFeatures": [
+      "ACID-compliant CRUD operational workflows for enterprise customer entities",
+      "Dynamic search, multi-column sorting, and server-side pagination for high record counts",
+      "Robust authentication layer with encrypted session persistence and CSRF token verification",
+      "Relational integrity enforcement with cascade safety and foreign key mapping in MySQL",
+      "Exportable customer audit reports and activity logs for operational compliance"
+    ],
+    "metrics": [
+      { "label": "Data Integrity", "value": "100% ACID" },
+      { "label": "Query Latency", "value": "< 120ms" },
+      { "label": "Security", "value": "SQLi & XSS Shielded" }
+    ],
+    "architecture": "MVC Architecture: View (JSP/Tailwind-style modern views) -> Controller (Java Servlets & Request Dispatchers) -> Model (DAO Pattern, Connection Pooling, MySQL RDBMS)",
+    "github": "https://github.com/megatheshwaran/customer-management-system",
+    "demo": "https://customer-mgmt.demo.local",
+    "badge": "Enterprise Web App"
+  },
+  {
+    "id": "online-library-system",
+    "title": "Online Library Management & Circulation Engine",
+    "subtitle": "High-Throughput Inventory & Automated Circulation Control",
+    "category": "Backend",
+    "featured": true,
+    "overview": "High-performance Core Java and JDBC-driven inventory tracking system engineered to automate book issuance, catalog classification, and automated overdue penalty calculations.",
+    "problem": "Manual library workflows experience significant circulation latency, recurring book misallocations, and human error in tracking multi-tiered overdue penalties.",
+    "solution": "Engineered an object-oriented Java backend applying clean modular layers (DTO/DAO), indexed MySQL schemas, and parameterized queries that guarantee zero data collisions during simultaneous member transactions.",
+    "techStack": ["Core Java", "JDBC", "MySQL", "OOP Design", "Transaction Management", "Data Structures"],
+    "keyFeatures": [
+      "Optimized catalog lookup algorithms supporting title, author, ISBN, and genre filters",
+      "Automated transaction workflows for book borrowing, renewal, and checked-in returns",
+      "Rule engine for real-time penalty calculations based on dynamic due-date differential algorithms",
+      "Secure administrative controls with partitioned privileges for librarians and library members",
+      "Optimized JDBC connection management with resilient exception logging and connection reuse"
+    ],
+    "metrics": [
+      { "label": "Inventory Accuracy", "value": "99.9%" },
+      { "label": "Lookup Speed", "value": "< 45ms" },
+      { "label": "Architecture", "value": "DAO Pattern" }
+    ],
+    "architecture": "Layered Enterprise Architecture: Presentation UI -> Service Business Logic Layer -> Data Access Object (DAO) Layer -> Database Connection Pool -> MySQL DB",
+    "github": "https://github.com/megatheshwaran/library-management-system",
+    "demo": "https://library-system.demo.local",
+    "badge": "Core Java & JDBC"
+  },
+  {
+    "id": "iot-energy-management",
+    "title": "IoT Remote Computer Room Energy Platform",
+    "subtitle": "Published Telemetry System for Telecom Infrastructure (IJNIET)",
+    "category": "Full Stack",
+    "featured": true,
+    "overview": "Peer-reviewed IoT energy monitoring and load management platform built to optimize power consumption across telecom operators' remote computer rooms using MQTT telemetry.",
+    "problem": "Unmonitored telecom computing hubs incur massive energy overheads and thermal spikes due to continuous HVAC operations without real-time environmental telemetry.",
+    "solution": "Engineered an end-to-end monitoring and automation pipeline connecting IoT sensor nodes over lightweight MQTT protocol to a Blynk cloud infrastructure, featuring automated threshold alerts and load actuation.",
+    "techStack": ["Java", "MQTT Protocol", "IoT Hardware", "Blynk Server", "Embedded Systems", "REST API", "Telemetry UI"],
+    "keyFeatures": [
+      "Continuous telemetry acquisition of current, voltage, temperature, and ambient humidity",
+      "MQTT-based lightweight publish-subscribe messaging minimizing bandwidth across remote links",
+      "Automated threshold-triggered load shedding to prevent thermal overload and power surges",
+      "Cloud telemetry dashboard with historical trend graphs and real-time anomalous power spikes",
+      "Published as a peer-reviewed research paper in the International Journal of New Innovations in Engineering and Technology (IJNIET)"
+    ],
+    "metrics": [
+      { "label": "Energy Optimization", "value": "~28% Saved" },
+      { "label": "Telemetry Protocol", "value": "MQTT Pub/Sub" },
+      { "label": "Peer Reviewed", "value": "IJNIET Journal" }
+    ],
+    "architecture": "IoT Telemetry Stack: Edge Sensor Array -> Microcontroller Firmware -> MQTT Broker / Blynk Cloud -> Java Backend Services -> Web Analytics Dashboard",
+    "github": "https://github.com/megatheshwaran/iot-telecom-energy-management",
+    "demo": "https://energy-telecom.demo.local",
+    "badge": "Published Research"
+  },
+  {
+    "id": "spring-boot-ecommerce-api",
+    "title": "Scalable E-Commerce REST API & Microservice Engine",
+    "subtitle": "Spring Boot, JWT Security & Relational Data Orchestration",
+    "category": "Backend",
+    "featured": true,
+    "overview": "High-throughput backend service providing enterprise RESTful endpoints for catalog filtering, authenticated shopping cart state, order workflows, and role-based administration.",
+    "problem": "Modern commerce platforms demand stateless, horizontally scalable API endpoints capable of processing concurrent checkout requests while maintaining transactional consistency.",
+    "solution": "Built a Spring Boot REST API utilizing Spring Security with stateless JWT authorization, Spring Data JPA / Hibernate for relational persistence, and clean layered domain-driven design.",
+    "techStack": ["Java", "Spring Boot", "Spring Security", "JWT", "Hibernate / JPA", "MySQL", "Maven", "Postman", "Docker"],
+    "keyFeatures": [
+      "Stateless JWT authentication with refresh token rotation and granular role authorizations",
+      "Comprehensive CRUD RESTful endpoints with input validation via Bean Validation (JSR 380)",
+      "Transactional order checkout flow guarded by ACID database constraints and stock reservation locks",
+      "Structured error handling with centralized ControllerAdvice and RFC 7807 problem details",
+      "Complete Postman API documentation collections with automated test assertions"
+    ],
+    "metrics": [
+      { "label": "API Standard", "value": "REST / OpenAPI" },
+      { "label": "Auth Security", "value": "JWT Bearer" },
+      { "label": "Persistence", "value": "Spring Data JPA" }
+    ],
+    "architecture": "Spring Boot Layered Microservice: Client Request -> Security Filter Chain (JWT) -> RestController -> DTO Mapping -> Business Service -> JPA Repository -> MySQL",
+    "github": "https://github.com/megatheshwaran/spring-boot-ecommerce-api",
+    "demo": "https://ecommerce-api.demo.local",
+    "badge": "Spring Boot & REST"
+  },
+  {
+    "id": "smart-garbage-monitoring",
+    "title": "Smart Civic Cleanliness & Waste Monitoring System",
+    "subtitle": "IoT Volumetric Depth Telemetry & Dynamic Dispatch Logistics",
+    "category": "Full Stack",
+    "featured": false,
+    "overview": "Smart municipal sanitation management system leveraging ultrasonic sensors, microcontrollers, and real-time alert dispatch to optimize civic waste collection routes.",
+    "problem": "Unscheduled waste collection causes civic bin overflow, environmental contamination, and inefficient municipal vehicle dispatch routes.",
+    "solution": "Designed a sensor telemetry system that continuously calculates bin fill levels, evaluates threshold percentages, and fires automated notification webhooks to municipal dispatchers.",
+    "techStack": ["IoT Sensors", "Microcontroller", "Java Services", "REST Webhooks", "HTML5", "CSS3", "JavaScript"],
+    "keyFeatures": [
+      "Ultrasonic volumetric depth sensing measuring real-time capacity in municipal containers",
+      "Dynamic threshold detection triggering real-time SMS and dashboard collection alerts",
+      "Interactive municipal status portal color-coding bin capacity statuses (Normal / Warning / Critical)",
+      "Battery-efficient sleep cycles enabling prolonged standalone telemetry operation",
+      "Data logging capabilities allowing municipal planning teams to analyze peak waste cycles"
+    ],
+    "metrics": [
+      { "label": "Alert Accuracy", "value": "98.5%" },
+      { "label": "Route Efficiency", "value": "+35% Faster" },
+      { "label": "Telemetry", "value": "Real-Time Webhooks" }
+    ],
+    "architecture": "Edge Hardware -> Telemetry Gateway -> Backend Alert Webhooks -> Real-Time Supervisor UI Dashboard",
+    "github": "https://github.com/megatheshwaran/smart-garbage-monitoring",
+    "demo": "https://smart-cleanliness.demo.local",
+    "badge": "IoT & Web Alert"
+  },
+  {
+    "id": "license-plate-recognition",
+    "title": "Automated License Plate Recognition (ALPR) System",
+    "subtitle": "Computer Vision Pipeline with ROI Localization & Character Segmentation",
+    "category": "Backend",
+    "featured": false,
+    "overview": "Computer vision pipeline engineered to accurately localize license plates and segment alphanumeric characters from vehicle imagery under varying lighting conditions.",
+    "problem": "Manual gate clearance and vehicle entry logging cause traffic bottlenecks and are prone to human transcription errors in high-density facilities.",
+    "solution": "Engineered an image processing pipeline applying adaptive grayscale thresholding, morphological ROI bounding box filtering, and character segmentation.",
+    "techStack": ["MATLAB", "Image Processing Toolbox", "Computer Vision", "Character Segmentation", "Algorithm Design"],
+    "keyFeatures": [
+      "Robust contrast adjustment and 2D median filtering to mitigate ambient lighting irregularities",
+      "Edge detection and mathematical morphology to detect rectangular plate regions of interest (ROI)",
+      "Connected-component labeling for precise individual alphanumeric character isolation",
+      "Presented and demonstrated at the National Level Technical Symposium at Excel Engineering College",
+      "Modular algorithm structure designed for easy integration with backend access control databases"
+    ],
+    "metrics": [
+      { "label": "ROI Localization", "value": "94.2% Success" },
+      { "label": "Processing Speed", "value": "< 250ms / frame" },
+      { "label": "Symposium", "value": "National Presentation" }
+    ],
+    "architecture": "Raw Image Input -> Pre-processing & Filtering -> Edge Detection & Morphology -> ROI Bounding Box Extraction -> Character Segmentation & Output",
+    "github": "https://github.com/megatheshwaran/license-plate-recognition",
+    "demo": "https://alpr-system.demo.local",
+    "badge": "Computer Vision"
+  }
+]

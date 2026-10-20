@@ -1,0 +1,53 @@
+{
+  "name": "Megatheshwaran R",
+  "initials": "MR",
+  "title": "Java Full Stack Developer",
+  "roles": [
+    "Java Full Stack Developer",
+    "Spring Boot Engineer",
+    "REST API & Backend Architect",
+    "Database & Microservices Specialist",
+    "IoT Solutions Engineer"
+  ],
+  "tagline": "Engineering clean, scalable, high-performance full-stack applications and resilient backend architectures.",
+  "location": "Trichy, Tamil Nadu, India",
+  "email": "ravichandranmegathesh@gmail.com",
+  "phone": "+91 9092734889",
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/megathesh-ravichandran-1053061a0",
+    "github": "https://github.com/megatheshwaran",
+    "instagram": "https://www.instagram.com/ravi_chandran_megathesh/profilecard/?igsh=cmwzZ3d0cWg3ZDd3",
+    "facebook": "https://www.facebook.com/megatheshravichandran.megatheshravichandran"
+  },
+  "githubUsername": "megatheshwaran",
+  "resumeUrl": "./resume.pdf",
+  "avatarUrl": "./boy.png",
+  "logoUrl": "./logo.png",
+  "bio": "Results-driven Java Full Stack Developer dedicated to architecting resilient enterprise backends, secure RESTful APIs, and responsive, interactive frontend experiences. Skilled in Core Java, Spring Boot, JDBC/JPA, MySQL database optimization, and modern JavaScript architectures. Passionate about translating complex business requirements into maintainable, mission-critical systems that deliver measurable reliability.",
+  "stats": [
+    {
+      "value": 6,
+      "suffix": "+",
+      "label": "Built Systems",
+      "description": "Full-stack, backend & IoT architectures"
+    },
+    {
+      "value": 15,
+      "suffix": "+",
+      "label": "Tech Stack Tools",
+      "description": "Enterprise Java, DBs & UI frameworks"
+    },
+    {
+      "value": 4,
+      "suffix": "+",
+      "label": "Verified Credentials",
+      "description": "IAO accredited & professional certifications"
+    },
+    {
+      "value": 1,
+      "suffix": "",
+      "label": "Journal Research",
+      "description": "Peer-reviewed paper published in IJNIET"
+    }
+  ]
+}

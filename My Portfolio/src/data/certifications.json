@@ -1,0 +1,85 @@
+{
+  "certifications": [
+    {
+      "id": "cert-java-iao",
+      "title": "Java Technology Certification",
+      "issuer": "International Accreditation Organization (IAO)",
+      "organization": "Accord Info Matrix",
+      "credentialId": "AIM JT 18529",
+      "verificationUrl": "https://drive.google.com/file/d/1yLctMTcfeqkvU_KGnoxkEEApsbxhVECb/view?usp=sharing",
+      "date": "Certified",
+      "skills": ["Core Java", "OOP Architecture", "Collections", "JDBC", "Exception Handling"],
+      "icon": "FaJava",
+      "badge": "IAO Accredited"
+    },
+    {
+      "id": "cert-web-iao",
+      "title": "Web Designing & Web Application Development",
+      "issuer": "International Accreditation Organization (IAO)",
+      "organization": "Accord Info Matrix",
+      "credentialId": "AIM WD 18530",
+      "verificationUrl": "https://drive.google.com/file/d/1RK4Qx3e7sDd1lFd7BI59g7lAktzzju65/view?usp=sharing",
+      "date": "Certified",
+      "skills": ["Web Architecture", "HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      "icon": "FaGlobe",
+      "badge": "IAO Accredited"
+    },
+    {
+      "id": "cert-fullstack-accord",
+      "title": "Java Full Stack Development Professional",
+      "issuer": "Accord Info Matrix",
+      "organization": "Accord Info Matrix",
+      "credentialId": "AIM-JFSD-2024",
+      "verificationUrl": "https://drive.google.com/file/d/1yLctMTcfeqkvU_KGnoxkEEApsbxhVECb/view?usp=sharing",
+      "date": "2024 - 2025",
+      "skills": ["J2EE", "Servlets & JSP", "MySQL", "JDBC", "Full-Stack Deployment"],
+      "icon": "FaCode",
+      "badge": "Professional"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-be",
+      "degree": "Bachelor of Engineering (B.E.)",
+      "field": "Electronics & Communication Engineering",
+      "institution": "Kongunadu College of Engineering and Technology",
+      "location": "Tamil Nadu, India",
+      "period": "2021 - 2024",
+      "score": "CGPA: 7.54",
+      "scoreLabel": "Academic CGPA",
+      "highlights": [
+        "Specialized in embedded computing, digital signal processing, and telecommunication protocols",
+        "Lead author on IoT telecom energy research paper published in IJNIET",
+        "Completed capstone engineering projects spanning automated license plate detection and municipal IoT"
+      ]
+    },
+    {
+      "id": "edu-diploma",
+      "degree": "Diploma in Engineering",
+      "field": "Electrical & Electronics Engineering (EEE)",
+      "institution": "Kongunadu Polytechnic College",
+      "location": "Tamil Nadu, India",
+      "period": "2018 - 2021",
+      "score": "94.0%",
+      "scoreLabel": "Distinction Grade",
+      "highlights": [
+        "Graduated with Distinction and top academic honors (94.0%)",
+        "Rigorous training in electrical circuitry, control systems, and microcontrollers",
+        "Demonstrated technical leadership in college laboratory projects and symposiums"
+      ]
+    },
+    {
+      "id": "edu-sslc",
+      "degree": "Secondary School Leaving Certificate (SSLC)",
+      "field": "General Academics & Sciences",
+      "institution": "Dr G. Viswanathampillai Matric High School",
+      "location": "Tamil Nadu, India",
+      "period": "2018",
+      "score": "79.6%",
+      "scoreLabel": "First Class",
+      "highlights": [
+        "Strong foundation in mathematics, analytical sciences, and foundational computing principles"
+      ]
+    }
+  ]
+}

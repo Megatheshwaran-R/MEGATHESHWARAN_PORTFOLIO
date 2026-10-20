@@ -1,0 +1,99 @@
+[
+  {
+    "id": "internship-vei",
+    "role": "Full Stack Development Intern",
+    "organization": "VEI Technologies Pvt Ltd",
+    "type": "Engineering Internship",
+    "period": "2024",
+    "location": "Chennai / Trichy, India",
+    "description": "Engaged in hands-on enterprise software development workflows, system integration, and production-oriented code reviews for web and IoT applications.",
+    "bulletPoints": [
+      "Engineered and analyzed Java-based web application modules adhering strictly to Software Development Life Cycle (SDLC) standards",
+      "Collaborated on real-time data handling pipelines and sensor telemetry architectures during specialized IoT technical workshops",
+      "Participated in active code walkthroughs focusing on OOP modularization, database query efficiency, and frontend-backend data binding"
+    ],
+    "skills": ["Java", "Full Stack Development", "SDLC", "IoT Architecture", "REST APIs", "Debugging"],
+    "badge": "Industry Internship"
+  },
+  {
+    "id": "training-accord",
+    "role": "Java Full Stack Developer Program",
+    "organization": "Accord Info Matrix (IAO Accredited)",
+    "type": "Specialized Professional Certification",
+    "period": "2024 - 2025",
+    "location": "Chennai, India",
+    "description": "Completed intensive full-stack development curriculum accredited by the International Accreditation Organization, building full-scale web and desktop applications.",
+    "bulletPoints": [
+      "Engineered multi-tier enterprise applications with Core Java, J2EE, JSP, Servlets, and JDBC connection pooling",
+      "Designed normalized relational schemas and executed optimized SQL queries across MySQL database engines",
+      "Developed interactive, accessible frontend interfaces utilizing modern HTML5, CSS3, JavaScript, and component design principles",
+      "Earned dual accredited certifications: Java Technology (AIM JT 18529) and Web Application Development (AIM WD 18530)"
+    ],
+    "skills": ["Core Java", "J2EE", "JSP & Servlets", "JDBC", "MySQL", "JavaScript", "HTML5/CSS3"],
+    "badge": "Accredited Training"
+  },
+  {
+    "id": "publication-ijniet",
+    "role": "Lead Research Author — IoT Telemetry & Energy Systems",
+    "organization": "International Journal of New Innovations in Engineering and Technology (IJNIET)",
+    "type": "Peer-Reviewed Research Publication",
+    "period": "Published",
+    "location": "International Journal",
+    "description": "Authored and published research paper detailing IoT and MQTT-based automated power management systems for telecommunications infrastructure.",
+    "bulletPoints": [
+      "Researched and authored 'Energy Saving and Management Using MQTT Protocol in Telecom Operators' Remote Computer Room'",
+      "Designed real-time sensor network telemetry models to dynamically balance energy loads and mitigate thermal surges",
+      "Demonstrated quantifiable power consumption reductions across distributed telecom equipment hubs"
+    ],
+    "skills": ["Research & Documentation", "MQTT Protocol", "IoT Telemetry", "System Architecture"],
+    "badge": "Journal Publication"
+  },
+  {
+    "id": "symposium-excel",
+    "role": "Technical Project Presenter",
+    "organization": "National Level Technical Symposium, Excel Engineering College",
+    "type": "Technical Symposium & Competition",
+    "period": "Symposium Milestone",
+    "location": "Tiruchengode, India",
+    "description": "Selected to present and demonstrate automated computer vision and image processing solutions to academic and industry adjudicators.",
+    "bulletPoints": [
+      "Presented live demonstration of 'License Plate Recognition Using MATLAB' image processing pipeline",
+      "Defended algorithmic choices regarding mathematical morphology, adaptive thresholding, and character segmentation accuracy",
+      "Interacted with technical panels on edge compute optimization and real-time highway tolling integration"
+    ],
+    "skills": ["Image Processing", "MATLAB", "Algorithm Design", "Technical Defense", "Presentation"],
+    "badge": "National Presentation"
+  },
+  {
+    "id": "symposium-gnyanamani",
+    "role": "Paper Presenter — Wireless Communications",
+    "organization": "National Level Technical Symposium, Gnyanamani Engineering College",
+    "type": "Technical Symposium Milestone",
+    "period": "Symposium Milestone",
+    "location": "Namakkal, India",
+    "description": "Delivered technical analysis and defense of next-generation wireless communications paradigms and high-reliability data links.",
+    "bulletPoints": [
+      "Authored and delivered conference paper examining scalable wireless communication protocols",
+      "Analyzed signal propagation efficiencies, latency trade-offs, and industrial sensor network integration",
+      "Received commendation from faculty and visiting engineering panels for structured analysis"
+    ],
+    "skills": ["Wireless Communications", "Data Protocols", "Technical Synthesis"],
+    "badge": "Symposium Presentation"
+  },
+  {
+    "id": "workshop-iot",
+    "role": "Advanced IoT & Microcontroller Workshop",
+    "organization": "VEI Technologies Pvt Ltd",
+    "type": "Hands-On Technical Workshop",
+    "period": "Technical Workshop",
+    "location": "Chennai, India",
+    "description": "Completed immersive hands-on laboratory workshops covering sensor arrays, embedded microcontrollers, and real-time cloud data pipelines.",
+    "bulletPoints": [
+      "Implemented hardware-software interfaces for ultrasonic depth sensing, temperature measurement, and ambient triggers",
+      "Configured embedded communication protocols for low-latency transmission to cloud endpoints",
+      "Laid the technical foundation for subsequent major smart sanitation and energy management deployments"
+    ],
+    "skills": ["IoT Prototyping", "Microcontroller Programming", "Hardware Interfacing", "Cloud Telemetry"],
+    "badge": "Hands-on Workshop"
+  }
+]
