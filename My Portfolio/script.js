@@ -854,7 +854,7 @@ JSP, Servlets, and Spring Boot REST APIs with academic IoT research published in
 `,
     'cat experience': () => `
 <div class="fg-green">INTERNSHIP & ACCREDITED TRAINING:</div>
-⚡ Full Stack Development Intern | VEI Technologies Pvt. Ltd., Chennai (Feb 15 - Mar 2, 2024)
+⚡ Full Stack Development Intern | VEI Technologies Pvt. Ltd., Chennai (Feb 15 - Mar 15, 2024 · 1 Month)
    - Software Development Life Cycle (SDLC) workflows and clean code structuring conventions.
    - Analyzed Java web application codebases to understand MVC architecture and backend persistence.
    - Hands-on technical sessions covering sensor integration and microcontroller programming.
