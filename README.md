@@ -1,27 +1,27 @@
-# Megatheshwaran R — Full Stack Engineering Portfolio
+# Megatheshwaran R — Java Full Stack Engineering Portfolio
 
-Dynamic, ultra-lightweight, high-visibility portfolio for **Megatheshwaran R** (Full Stack Developer & IoT Systems Engineer).
+Dynamic, ultra-lightweight, high-visibility portfolio for **Megatheshwaran R** (Java Full Stack Developer & IoT Systems Engineer).
 
 ---
 
-## ⚡ Full-Stack & Dynamic Architecture
+## ⚡ Java Full Stack & Dynamic Architecture
 
-- **Full Stack Developer Positioning**: Highlights expertise across **Frontend** (HTML5, CSS3, JavaScript ES6+, React concepts, Responsive UI), **Backend** (Core Java, Spring Boot, Java Servlets, JSP, RESTful APIs, Apache Tomcat), **Databases** (MySQL RDBMS, Hibernate/JPA, JDBC connection pooling, ACID transactions), and **IoT Telemetry** (NodeMCU ESP8266, MQTT Pub/Sub).
+- **Java Full Stack Developer Positioning**: Highlights expertise across **Frontend** (HTML5, CSS3, JavaScript ES6+, React concepts, Responsive UI), **Backend** (Core Java, Spring Boot, Java Servlets, JSP, RESTful APIs, Apache Tomcat), **Databases** (MySQL RDBMS, Hibernate/JPA, JDBC connection pooling, ACID transactions), and **IoT Telemetry** (NodeMCU ESP8266, MQTT Pub/Sub).
 - **Live Dynamic GitHub Telemetry**:
   - Live asynchronous integration with GitHub REST API (`https://api.github.com/users/Megatheshwaran-R`).
   - Displays real-time public repo counts, profile bio, and a dynamic stream of open-source repositories with language tags, stars, and direct links.
   - Graceful pre-rendered fallbacks ensure the page functions seamlessly even if offline or API rate-limited.
-- **Dynamic Full-Stack Project Search & Filtering**:
+- **Dynamic Java Full Stack Project Search & Filtering**:
   - Real-time search bar that filters projects dynamically as you type (title, tech tags, descriptions).
-  - Category filters (`All`, `Full Stack & Java`, `IoT & Telemetry`, `Computer Vision & MATLAB`) with live project counter badge (`Showing X of 6 projects`).
+  - Category filters (`All`, `Java Full Stack`, `IoT & Telemetry`, `Computer Vision & MATLAB`) with live project counter badge (`Showing X of 6 projects`).
 - **Dynamic System Architecture Modal**:
   - Click **"Inspect Architecture"** on any project to open a slide-out deep dive detailing the end-to-end data pipeline, database schema, security safeguards (SQLi/CSRF protection), and engineering metrics.
 - **Interactive Multi-Mode Engineering Console**:
-  1. **Full-Stack REST API & MVC Dispatcher**: Live editable JSON payload editor with real-time dispatch simulation through Controller -> Service -> HikariCP Pool -> MySQL PreparedStatement with sub-15ms response latency.
+  1. **Java Full Stack REST API & MVC Dispatcher**: Live editable JSON payload editor with real-time dispatch simulation through Controller -> Service -> HikariCP Pool -> MySQL PreparedStatement with sub-15ms response latency.
   2. **IoT Telecom & Smart Sanitation Telemetry**: Real-time HTML5 canvas graphing DHT11 temperature, ultrasonic depth levels, automated cooling fan triggers, and MQTT heartbeats.
   3. **MATLAB ALPR Pipeline**: Interactive computer vision steps for license plate recognition with live bounding boxes.
 - **Interactive UNIX CLI Terminal**:
-  - Terminal drawer (`$_ CLI Shell`) with dynamic commands: `git status`, `git repos` (live GitHub fetch), `run api`, `cat fullstack`, `cat resume`, `cat skills`, `cat experience`, `cat education`, `cat publication`, `ls projects`, `ping blynk`, `download`, `contact`, `clear`.
+  - Terminal drawer (`$_ CLI Shell`) with dynamic commands: `git status`, `git repos` (live GitHub fetch), `run api`, `cat fullstack`, `cat javafullstack`, `cat resume`, `cat skills`, `cat experience`, `cat education`, `cat publication`, `ls projects`, `ping blynk`, `download`, `contact`, `clear`.
 - **Dynamic Contact Form**:
   - Form with real-time validation and dispatch state, opening mail clients with formatted inquiries and displaying animated toast alerts.
 - **Zero-Dependency Footprint**:

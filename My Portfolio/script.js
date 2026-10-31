@@ -1,5 +1,5 @@
 // ----------------------------------------------------
-// Megatheshwaran R — Full Stack Developer & IoT Engineer
+// Megatheshwaran R — Java Full Stack Developer & IoT Engineer
 // Dynamic GitHub Telemetry, Interactive Simulators, Architecture Modals, & CLI Shell
 // ----------------------------------------------------
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           repos.forEach(repo => {
             const card = document.createElement('div');
             card.className = 'repo-card';
-            const lang = repo.language || 'Full Stack';
+            const lang = repo.language || 'Java Full Stack';
             const desc = repo.description || 'Enterprise software & hardware repository.';
             
             card.innerHTML = `
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------
-  // 3. TAB 1: FULL-STACK REST API & MVC DISPATCHER
+  // 3. TAB 1: JAVA FULL STACK REST API & MVC DISPATCHER
   // --------------------------------------------------
   const runApiBtn = document.getElementById('runApiBtn');
   const apiEndpointSelect = document.getElementById('apiEndpointSelect');
@@ -787,18 +787,18 @@ X-Connection-Pool: HikariCP-Active
 
   const commands = {
     help: () => `
-<div class="fg-amber">AVAILABLE COMMANDS IN MEGATHESH'S FULL-STACK TERMINAL:</div>
+<div class="fg-amber">AVAILABLE COMMANDS IN MEGATHESH'S JAVA FULL STACK TERMINAL:</div>
   <span class="fg-cyan">help</span>          - Display available command set
   <span class="fg-cyan">git status</span>    - Show current git branch & working tree state
   <span class="fg-cyan">git repos</span>     - Dynamically fetch live public repos from GitHub API
   <span class="fg-cyan">cat resume</span>    - Print full resume details and professional summary
-  <span class="fg-cyan">cat fullstack</span> - Display complete full-stack architecture capabilities
+  <span class="fg-cyan">cat fullstack</span> - Display complete Java Full Stack architecture capabilities
   <span class="fg-cyan">cat skills</span>    - Output tech matrix (Core Java, Spring, MySQL, Servlets)
   <span class="fg-cyan">cat experience</span>- View VEI Technologies internship & Accord IAO training
   <span class="fg-cyan">cat education</span> - View Kongunadu College B.E. ECE & Polytechnic (94%)
   <span class="fg-cyan">cat publication</span>- Read IJNIET peer-reviewed research paper summary
   <span class="fg-cyan">ls projects</span>   - Enumerate all software, web, & IoT repositories
-  <span class="fg-cyan">run api</span>       - Execute simulated full-stack REST API dispatch
+  <span class="fg-cyan">run api</span>       - Execute simulated Java Full Stack REST API dispatch
   <span class="fg-cyan">ping blynk</span>    - Run simulated MQTT telemetry handshake
   <span class="fg-cyan">download</span>      - Trigger Megatheeswaran_Resume.pdf download
   <span class="fg-cyan">contact</span>       - Show direct phone, email & social links
@@ -825,7 +825,15 @@ nothing to commit, working tree clean
       return `<div class="fg-amber">* Iot_Energy_Monitoring_System (C++) -> https://github.com/Megatheshwaran-R/Iot_Energy_Monitoring_System</div>`;
     },
     'cat fullstack': () => `
-<div class="fg-cyan">FULL STACK DEVELOPER ARCHITECTURE STACK:</div>
+<div class="fg-cyan">JAVA FULL STACK DEVELOPER ARCHITECTURE STACK:</div>
+• FRONTEND   : HTML5, CSS3, JavaScript (ES6+), React Concepts, Responsive Layouts, Fetch/AJAX
+• BACKEND    : Core Java, OOP Principles, Spring Boot, Java Servlets, JSP, REST APIs, Tomcat
+• DATABASE   : MySQL RDBMS, Relational Schema Modeling, DDL/DML, PreparedStatements, ACID, JPA
+• IOT & SYST : NodeMCU ESP8266, MQTT Protocol, Blynk IoT Cloud, ThingSpeak, MATLAB Vision
+• TOOLING    : Eclipse IDE, VS Code, Git, GitHub Actions, Postman, Arduino IDE
+`,
+    'cat javafullstack': () => `
+<div class="fg-cyan">JAVA FULL STACK DEVELOPER ARCHITECTURE STACK:</div>
 • FRONTEND   : HTML5, CSS3, JavaScript (ES6+), React Concepts, Responsive Layouts, Fetch/AJAX
 • BACKEND    : Core Java, OOP Principles, Spring Boot, Java Servlets, JSP, REST APIs, Tomcat
 • DATABASE   : MySQL RDBMS, Relational Schema Modeling, DDL/DML, PreparedStatements, ACID, JPA
@@ -833,7 +841,7 @@ nothing to commit, working tree clean
 • TOOLING    : Eclipse IDE, VS Code, Git, GitHub Actions, Postman, Arduino IDE
 `,
     'cat resume': () => `
-<div class="fg-green">MEGATHESHWARAN R — FULL STACK DEVELOPER (JAVA & WEB)</div>
+<div class="fg-green">MEGATHESHWARAN R — JAVA FULL STACK DEVELOPER</div>
 Location: Karapakkam, Chennai, Tamil Nadu (Open to relocation: Bangalore / Hyderabad / Coimbatore)
 Email: ravichandranmegathesh@gmail.com | Phone: +91 9092734889
 GitHub: github.com/Megatheshwaran-R | LinkedIn: linkedin.com/in/megathesh-ravichandran-1053061a0
@@ -854,7 +862,7 @@ JSP, Servlets, and Spring Boot REST APIs with academic IoT research published in
 `,
     'cat experience': () => `
 <div class="fg-green">INTERNSHIP & ACCREDITED TRAINING:</div>
-⚡ Full Stack Development Intern | VEI Technologies Pvt. Ltd., Chennai (Feb 15 - Mar 15, 2024 · 1 Month)
+⚡ Java Full Stack Development Intern | VEI Technologies Pvt. Ltd., Chennai (Feb 15 - Mar 15, 2024 · 1 Month)
    - Software Development Life Cycle (SDLC) workflows and clean code structuring conventions.
    - Analyzed Java web application codebases to understand MVC architecture and backend persistence.
    - Hands-on technical sessions covering sensor integration and microcontroller programming.
@@ -928,7 +936,7 @@ Payload processed by Java Servlet controller -> HikariCP Pool -> PreparedStateme
 
         const cmdLine = document.createElement('div');
         cmdLine.className = 'cli-line';
-        cmdLine.innerHTML = `<span class="cli-prompt">megathesh@fullstack:~$</span> <span class="fg-amber">${rawCmd}</span>`;
+        cmdLine.innerHTML = `<span class="cli-prompt">megathesh@java-fullstack:~$</span> <span class="fg-amber">${rawCmd}</span>`;
         cliOutput.appendChild(cmdLine);
 
         if (commands[rawCmd]) {
