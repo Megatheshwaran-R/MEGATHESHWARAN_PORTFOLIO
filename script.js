@@ -959,6 +959,122 @@ Payload processed by Java Servlet controller -> HikariCP Pool -> PreparedStateme
     });
   }
 
+  // --------------------------------------------------
+  // 8. 3D AMBIENT PARTICLE CONSTELLATION CANVAS (Zero-Dependency)
+  // --------------------------------------------------
+  const canvas = document.getElementById('ambient3DCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const count = 90;
+    const particles = [];
+    const fov = 350;
+    let mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: (Math.random() - 0.5) * width * 1.5,
+        y: (Math.random() - 0.5) * height * 1.5,
+        z: Math.random() * 800 - 400,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        vz: (Math.random() - 0.5) * 0.7,
+        size: Math.random() * 2 + 1.2
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.tx = e.clientX;
+      mouse.ty = e.clientY;
+    });
+
+    function render3DParticles() {
+      ctx.clearRect(0, 0, width, height);
+      mouse.x += (mouse.tx - mouse.x) * 0.05;
+      mouse.y += (mouse.ty - mouse.y) * 0.05;
+
+      const cx = width / 2 + (mouse.x - width / 2) * 0.12;
+      const cy = height / 2 + (mouse.y - height / 2) * 0.12;
+
+      const screenCoords = [];
+
+      for (let i = 0; i < count; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.z += p.vz;
+
+        if (p.x < -width) p.x = width;
+        if (p.x > width) p.x = -width;
+        if (p.y < -height) p.y = height;
+        if (p.y > height) p.y = -height;
+        if (p.z < -fov + 20) p.z = 400;
+        if (p.z > 400) p.z = -fov + 30;
+
+        const scale = fov / (fov + p.z);
+        const sx = cx + p.x * scale;
+        const sy = cy + p.y * scale;
+        const alpha = Math.min(Math.max((400 - p.z) / 800, 0.1), 0.75);
+
+        screenCoords.push({ sx, sy, alpha, scale });
+
+        ctx.fillStyle = `rgba(0, 240, 255, ${alpha * 0.7})`;
+        ctx.beginPath();
+        ctx.arc(sx, sy, p.size * scale, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < count; i++) {
+        for (let j = i + 1; j < count; j++) {
+          const dx = screenCoords[i].sx - screenCoords[j].sx;
+          const dy = screenCoords[i].sy - screenCoords[j].sy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            const lineAlpha = (1 - dist / 110) * 0.16;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${lineAlpha})`;
+            ctx.beginPath();
+            ctx.moveTo(screenCoords[i].sx, screenCoords[i].sy);
+            ctx.lineTo(screenCoords[j].sx, screenCoords[j].sy);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(render3DParticles);
+    }
+
+    render3DParticles();
+  }
+
+  // --------------------------------------------------
+  // 9. 3D CARD TILT INTERACTIVE PHYSICS
+  // --------------------------------------------------
+  const tiltCards = document.querySelectorAll('.project-card, .profile-card, .kpi-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotX = ((y - cy) / cy) * -6;
+      const rotY = ((x - cx) / cx) * 6;
+      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+
 });
 
 // Global Copy Email Helper
