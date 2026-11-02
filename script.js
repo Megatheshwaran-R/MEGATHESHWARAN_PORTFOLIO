@@ -577,6 +577,11 @@ X-Connection-Pool: HikariCP-Active
   const modalSubtitle = document.getElementById('modalSubtitle');
   const modalBody = document.getElementById('modalBody');
 
+  // Ensure modal and toast are hidden on load
+  if (modalOverlay) modalOverlay.style.display = 'none';
+  const initToast = document.getElementById('toastMsg');
+  if (initToast) initToast.style.display = 'none';
+
   const ARCHITECTURE_DATA = {
     'iot-energy': {
       title: "IoT Remote Computer Room Energy Platform",
@@ -686,12 +691,16 @@ X-Connection-Pool: HikariCP-Active
       modalTitle.textContent = data.title;
       modalSubtitle.textContent = data.subtitle;
       modalBody.innerHTML = data.body;
+      modalOverlay.style.display = 'flex';
       modalOverlay.classList.add('active');
     }
   };
 
   function closeModal() {
-    if (modalOverlay) modalOverlay.classList.remove('active');
+    if (modalOverlay) {
+      modalOverlay.style.display = 'none';
+      modalOverlay.classList.remove('active');
+    }
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
