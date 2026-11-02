@@ -1921,11 +1921,32 @@ function App() {
   );
 }
 
-// Mount the React Application
-window.addEventListener('DOMContentLoaded', () => {
+// Immediate React 18 Mounting Function
+function mountReactApp() {
   const rootElement = document.getElementById('root');
   if (rootElement) {
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(<App />);
+    try {
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(<App />);
+      console.log("⚡ 3D React Core Mounted Successfully!");
+    } catch (err) {
+      console.error("Mount error:", err);
+      rootElement.innerHTML = `
+        <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;color:#00f0ff;font-family:monospace;padding:20px;text-align:center;">
+          <div>
+            <h2>Initialization Notice</h2>
+            <p style="color:#ef4444;margin:10px 0;">${err.message}</p>
+            <button onclick="location.reload()" style="background:#00f0ff;color:#000;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;font-weight:bold;">Reload Page</button>
+          </div>
+        </div>
+      `;
+    }
   }
-});
+}
+
+// Execute immediately without waiting for DOMContentLoaded (which already fired before Babel transpilation)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountReactApp);
+} else {
+  mountReactApp();
+}
