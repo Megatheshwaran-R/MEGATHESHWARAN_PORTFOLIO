@@ -810,6 +810,7 @@ X-Connection-Pool: HikariCP-Active
   <span class="fg-cyan">run api</span>       - Execute simulated Java Full Stack REST API dispatch
   <span class="fg-cyan">ping blynk</span>    - Run simulated MQTT telemetry handshake
   <span class="fg-cyan">download</span>      - Trigger Megatheeswaran_Resume.pdf download
+  <span class="fg-cyan">rain &lt;mode&gt;</span>   - Control falling rain effect (cyber | storm | matrix | off)
   <span class="fg-cyan">contact</span>       - Show direct phone, email & social links
   <span class="fg-cyan">clear</span>         - Clear shell output window
 `,
@@ -932,6 +933,36 @@ Payload processed by Java Servlet controller -> HikariCP Pool -> PreparedStateme
     clear: () => {
       if (cliOutput) cliOutput.innerHTML = '';
       return '';
+    },
+    rain: () => `
+<div class="fg-cyan">ATMOSPHERIC RAIN SUBSYSTEM:</div>
+Current Status: <span class="fg-green">Active [Mode: ${(window.currentRainMode || 'CYBER').toUpperCase()}]</span>
+Available Rain Modes:
+  • <span class="fg-amber">rain cyber</span>  - Ultra-sleek neon cyan cyber rain streaks with splashes
+  • <span class="fg-amber">rain storm</span>  - Intense neon thunderstorm with high wind & lightning pulses
+  • <span class="fg-amber">rain matrix</span> - Digital streaming code rain (binary, hex & Java tokens)
+  • <span class="fg-amber">rain off</span>    - Pause and disable atmospheric rain
+  • <span class="fg-amber">rain on</span>     - Resume default cyber neon rain
+`,
+    'rain cyber': () => {
+      if (window.setRainMode) window.setRainMode('cyber');
+      return `<div class="fg-cyan">🌧️ Switched rain mode to: <span class="fg-green">CYBER NEON RAIN</span></div>`;
+    },
+    'rain storm': () => {
+      if (window.setRainMode) window.setRainMode('storm');
+      return `<div class="fg-cyan">🌩️ Switched rain mode to: <span class="fg-amber">NEON THUNDERSTORM</span></div>`;
+    },
+    'rain matrix': () => {
+      if (window.setRainMode) window.setRainMode('matrix');
+      return `<div class="fg-cyan">💻 Switched rain mode to: <span class="fg-green">MATRIX DIGITAL CODE RAIN</span></div>`;
+    },
+    'rain off': () => {
+      if (window.setRainMode) window.setRainMode('off');
+      return `<div class="fg-dim">🚫 Atmospheric rain disabled.</div>`;
+    },
+    'rain on': () => {
+      if (window.setRainMode) window.setRainMode('cyber');
+      return `<div class="fg-cyan">🌧️ Atmospheric rain resumed (Cyber Neon).</div>`;
     }
   };
 
@@ -950,6 +981,23 @@ Payload processed by Java Servlet controller -> HikariCP Pool -> PreparedStateme
 
         if (commands[rawCmd]) {
           const resp = await commands[rawCmd]();
+          if (resp) {
+            const respLine = document.createElement('div');
+            respLine.className = 'cli-line';
+            respLine.innerHTML = resp;
+            cliOutput.appendChild(respLine);
+          }
+        } else if (rawCmd.startsWith('rain')) {
+          const parts = rawCmd.split(/\s+/);
+          const sub = parts[1] || '';
+          let resp = '';
+          if (!sub || sub === 'help' || sub === 'status') {
+            resp = commands['rain']();
+          } else if (['cyber', 'storm', 'matrix', 'off', 'on'].includes(sub)) {
+            resp = commands['rain ' + sub]();
+          } else {
+            resp = `<div class="fg-amber">Unknown rain mode: "${sub}". Type <span class="fg-cyan">'rain'</span> to see available modes.</div>`;
+          }
           if (resp) {
             const respLine = document.createElement('div');
             respLine.className = 'cli-line';
@@ -1083,6 +1131,377 @@ Payload processed by Java Servlet controller -> HikariCP Pool -> PreparedStateme
       card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
     });
   });
+
+  // --------------------------------------------------
+  // 10. ATMOSPHERIC FALLING RAIN & CYBER WEATHER ENGINE
+  // --------------------------------------------------
+  const rainCanvas = document.getElementById('rainCanvas');
+  if (rainCanvas) {
+    const rCtx = rainCanvas.getContext('2d');
+    let width = rainCanvas.width = window.innerWidth;
+    let height = rainCanvas.height = window.innerHeight;
+
+    let rainMode = 'cyber'; // 'cyber' | 'storm' | 'matrix' | 'off'
+    window.currentRainMode = rainMode;
+
+    const baseAngle = -0.12; // Natural atmospheric slant
+    let currentWind = baseAngle;
+    let targetWind = baseAngle;
+    let lastMouseX = 0;
+    let lightningAlpha = 0;
+    let nextLightning = Date.now() + 14000;
+
+    // Responsive Rain Particle Count
+    function getDropCount() {
+      const isMobile = window.innerWidth < 768;
+      const base = isMobile ? 85 : 180;
+      return rainMode === 'storm' ? Math.round(base * 1.8) : base;
+    }
+
+    let drops = [];
+    let splashes = [];
+    let ripples = [];
+
+    function initDrops() {
+      drops = [];
+      const count = getDropCount();
+      for (let i = 0; i < count; i++) {
+        const z = Math.random() * 0.75 + 0.25; // 0.25 (distant) to 1.0 (foreground)
+        drops.push({
+          x: Math.random() * (width + 400) - 200,
+          y: Math.random() * (height + 200) - 100,
+          z: z,
+          length: (22 + Math.random() * 26) * z,
+          speed: (15 + Math.random() * 12) * z,
+          thickness: (0.75 + Math.random() * 0.95) * z,
+          alpha: (0.25 + Math.random() * 0.6) * z
+        });
+      }
+    }
+    initDrops();
+
+    // Matrix Digital Code Setup
+    const matrixFontSize = 14;
+    let matrixCols = Math.floor(width / matrixFontSize);
+    let matrixDrops = [];
+    const matrixGlyphs = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜJAVA0x4F{}();=>intvoidnull#$@';
+    let lastMatrixTime = 0;
+
+    function initMatrix() {
+      matrixCols = Math.floor(width / matrixFontSize);
+      matrixDrops = [];
+      for (let i = 0; i < matrixCols; i++) {
+        matrixDrops.push({
+          y: Math.floor(Math.random() * -30),
+          speed: Math.random() * 0.5 + 0.8,
+          headChar: matrixGlyphs[Math.floor(Math.random() * matrixGlyphs.length)]
+        });
+      }
+    }
+    initMatrix();
+
+    // Window Resize Handler
+    window.addEventListener('resize', () => {
+      width = rainCanvas.width = window.innerWidth;
+      height = rainCanvas.height = window.innerHeight;
+      initDrops();
+      initMatrix();
+    });
+
+    // Dynamic Wind Reaction to Mouse Motion
+    window.addEventListener('mousemove', (e) => {
+      const deltaX = (e.clientX - lastMouseX) * 0.0025;
+      lastMouseX = e.clientX;
+      targetWind = baseAngle + Math.max(-0.4, Math.min(0.4, deltaX));
+    });
+
+    // Spawn Impact Ripple & Splash Sparks
+    function triggerImpact(x, y, z) {
+      if (ripples.length < 35) {
+        ripples.push({
+          x: x,
+          y: y,
+          rx: 1,
+          ry: 0.35,
+          maxR: (5 + Math.random() * 7) * z,
+          alpha: 0.7 * z
+        });
+      }
+
+      if (splashes.length < 60 && z > 0.45) {
+        const sparkCount = z > 0.7 ? 3 : 2;
+        for (let s = 0; s < sparkCount; s++) {
+          const ang = -Math.PI / 2 + (Math.random() - 0.5) * 1.8;
+          const vel = (Math.random() * 2.2 + 1.0) * z;
+          splashes.push({
+            x: x,
+            y: y,
+            vx: Math.cos(ang) * vel + currentWind * 1.5,
+            vy: Math.sin(ang) * vel,
+            radius: (Math.random() * 1.2 + 0.6) * z,
+            alpha: 0.75,
+            decay: Math.random() * 0.05 + 0.04
+          });
+        }
+      }
+    }
+
+    // Main Rain Animation Render Loop
+    function renderRain(timestamp) {
+      if (rainMode === 'off') {
+        rCtx.clearRect(0, 0, width, height);
+        requestAnimationFrame(renderRain);
+        return;
+      }
+
+      // Smooth Wind Relaxation with Ambient Breeze Flutter
+      const flutter = Math.sin(timestamp * 0.001) * 0.03;
+      currentWind += (targetWind + flutter - currentWind) * 0.04;
+      targetWind += (baseAngle - targetWind) * 0.02;
+
+      // --------------------------------------------------
+      // MODE: MATRIX CODE CASCADE
+      // --------------------------------------------------
+      if (rainMode === 'matrix') {
+        // Digital fade trail
+        rCtx.fillStyle = 'rgba(7, 9, 14, 0.16)';
+        rCtx.fillRect(0, 0, width, height);
+
+        if (timestamp - lastMatrixTime > 45) { // ~22 FPS matrix stream rate
+          lastMatrixTime = timestamp;
+          rCtx.font = `600 ${matrixFontSize}px "IBM Plex Mono", monospace`;
+
+          for (let i = 0; i < matrixCols; i++) {
+            const col = matrixDrops[i];
+            const x = i * matrixFontSize;
+            const y = col.y * matrixFontSize;
+            const glyph = matrixGlyphs[Math.floor(Math.random() * matrixGlyphs.length)];
+
+            if (y > 0 && y < height + 40) {
+              // Bright leading glyph
+              rCtx.fillStyle = '#ffffff';
+              rCtx.shadowColor = '#00f0ff';
+              rCtx.shadowBlur = 8;
+              rCtx.fillText(glyph, x, y);
+
+              // Glowing cyan stream trail
+              rCtx.fillStyle = 'rgba(0, 240, 255, 0.75)';
+              rCtx.shadowBlur = 0;
+              rCtx.fillText(col.headChar || glyph, x, y - matrixFontSize);
+            }
+
+            col.headChar = glyph;
+            col.y += col.speed;
+
+            if (col.y * matrixFontSize > height && Math.random() > 0.975) {
+              col.y = Math.floor(Math.random() * -15);
+              col.speed = Math.random() * 0.5 + 0.8;
+            }
+          }
+        }
+
+        requestAnimationFrame(renderRain);
+        return;
+      }
+
+      // --------------------------------------------------
+      // MODES: CYBER NEON RAIN & NEON THUNDERSTORM
+      // --------------------------------------------------
+      rCtx.clearRect(0, 0, width, height);
+
+      // Atmospheric Thunderstorm Lightning Pulse
+      if (rainMode === 'storm') {
+        const now = Date.now();
+        if (now > nextLightning) {
+          lightningAlpha = 0.18;
+          nextLightning = now + 12000 + Math.random() * 14000;
+        }
+        if (lightningAlpha > 0.005) {
+          rCtx.fillStyle = `rgba(180, 235, 255, ${lightningAlpha})`;
+          rCtx.fillRect(0, 0, width, height);
+          lightningAlpha *= 0.86;
+        }
+      }
+
+      const speedMultiplier = rainMode === 'storm' ? 1.6 : 1.0;
+      const angle = currentWind;
+      const sinA = Math.sin(angle);
+      const cosA = Math.cos(angle);
+
+      // Draw Raindrop Streaks
+      rCtx.lineCap = 'round';
+      for (let i = 0; i < drops.length; i++) {
+        const d = drops[i];
+
+        d.x += sinA * d.speed * speedMultiplier;
+        d.y += cosA * d.speed * speedMultiplier;
+
+        const tailX = d.x - sinA * d.length;
+        const tailY = d.y - cosA * d.length;
+
+        // Realistic neon gradient: Faint tail -> electric blue mid -> bright cyan head
+        const grad = rCtx.createLinearGradient(tailX, tailY, d.x, d.y);
+        if (rainMode === 'storm') {
+          grad.addColorStop(0, 'rgba(56, 189, 248, 0)');
+          grad.addColorStop(0.65, `rgba(56, 189, 248, ${d.alpha * 0.45})`);
+          grad.addColorStop(1, `rgba(220, 250, 255, ${d.alpha * 0.95})`);
+        } else {
+          grad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+          grad.addColorStop(0.6, `rgba(0, 240, 255, ${d.alpha * 0.4})`);
+          grad.addColorStop(1, `rgba(200, 250, 255, ${d.alpha})`);
+        }
+
+        rCtx.strokeStyle = grad;
+        rCtx.lineWidth = d.thickness;
+        rCtx.beginPath();
+        rCtx.moveTo(tailX, tailY);
+        rCtx.lineTo(d.x, d.y);
+        rCtx.stroke();
+
+        // Hit Bottom -> Reset & Trigger Splash Ripples
+        if (d.y > height + 10) {
+          triggerImpact(d.x, height - 2, d.z);
+          d.y = -d.length - Math.random() * 40;
+          d.x = Math.random() * (width + 400) - 200;
+        }
+        if (d.x < -200) d.x = width + 150;
+        if (d.x > width + 200) d.x = -150;
+      }
+
+      // Draw Expanding Ground Ripples
+      for (let r = ripples.length - 1; r >= 0; r--) {
+        const rp = ripples[r];
+        rp.rx += 0.55;
+        rp.ry += 0.22;
+        rp.alpha -= 0.035;
+
+        if (rp.alpha <= 0 || rp.rx >= rp.maxR) {
+          ripples.splice(r, 1);
+          continue;
+        }
+
+        rCtx.strokeStyle = `rgba(0, 240, 255, ${rp.alpha * 0.6})`;
+        rCtx.lineWidth = 0.8;
+        rCtx.beginPath();
+        rCtx.ellipse(rp.x, rp.y, rp.rx, rp.ry, 0, 0, Math.PI * 2);
+        rCtx.stroke();
+      }
+
+      // Draw Splash Droplet Sparks
+      for (let s = splashes.length - 1; s >= 0; s--) {
+        const sp = splashes[s];
+        sp.x += sp.vx;
+        sp.y += sp.vy;
+        sp.vy += 0.14; // Gravity acceleration
+        sp.alpha -= sp.decay;
+
+        if (sp.alpha <= 0) {
+          splashes.splice(s, 1);
+          continue;
+        }
+
+        rCtx.fillStyle = `rgba(0, 240, 255, ${sp.alpha * 0.75})`;
+        rCtx.beginPath();
+        rCtx.arc(sp.x, sp.y, sp.radius, 0, Math.PI * 2);
+        rCtx.fill();
+      }
+
+      requestAnimationFrame(renderRain);
+    }
+
+    requestAnimationFrame(renderRain);
+
+    // Global Rain Mode Controller
+    window.setRainMode = function(mode) {
+      if (!['cyber', 'storm', 'matrix', 'off'].includes(mode)) return;
+      rainMode = mode;
+      window.currentRainMode = mode;
+      initDrops();
+
+      if (mode === 'matrix') {
+        rCtx.clearRect(0, 0, width, height);
+      }
+
+      // Update UI Header Button & Badge
+      const badge = document.getElementById('rainModeBadge');
+      const toggleBtn = document.getElementById('rainToggleBtn');
+      const items = document.querySelectorAll('.rain-drop-item');
+
+      if (badge) {
+        badge.textContent = mode.toUpperCase();
+      }
+      if (toggleBtn) {
+        if (mode === 'off') {
+          toggleBtn.classList.add('rain-off');
+          toggleBtn.classList.remove('rain-active');
+        } else {
+          toggleBtn.classList.remove('rain-off');
+          toggleBtn.classList.add('rain-active');
+        }
+      }
+
+      items.forEach(it => {
+        if (it.getAttribute('data-rain') === mode) {
+          it.classList.add('active');
+        } else {
+          it.classList.remove('active');
+        }
+      });
+
+      // Show Atmospheric Notification Toast
+      const toast = document.getElementById('toastMsg');
+      if (toast) {
+        const labels = {
+          cyber: '⚡ Cyber Neon Rain Active',
+          storm: '🌩️ Neon Thunderstorm Active',
+          matrix: '💻 Matrix Code Rain Active',
+          off: '🚫 Atmospheric Rain Disabled'
+        };
+        toast.textContent = labels[mode] || `Rain Mode: ${mode}`;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2500);
+      }
+    };
+
+    // Header Rain Button & Dropdown Click Handlers
+    const rainToggleBtn = document.getElementById('rainToggleBtn');
+    const rainDropdown = document.getElementById('rainDropdown');
+
+    if (rainToggleBtn && rainDropdown) {
+      // Click button cycles modes: cyber -> storm -> matrix -> off -> cyber
+      rainToggleBtn.addEventListener('click', (e) => {
+        // If clicking directly on the button (not a child that explicitly wants dropdown)
+        const modes = ['cyber', 'storm', 'matrix', 'off'];
+        const currentIdx = modes.indexOf(rainMode);
+        const nextMode = modes[(currentIdx + 1) % modes.length];
+        window.setRainMode(nextMode);
+      });
+
+      // Right-click or long-press can toggle dropdown
+      rainToggleBtn.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        rainDropdown.classList.toggle('active');
+      });
+
+      // Close dropdown if clicking outside
+      document.addEventListener('click', (e) => {
+        if (!rainToggleBtn.contains(e.target) && !rainDropdown.contains(e.target)) {
+          rainDropdown.classList.remove('active');
+        }
+      });
+
+      // Dropdown menu item clicks
+      const dropItems = document.querySelectorAll('.rain-drop-item');
+      dropItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetMode = item.getAttribute('data-rain');
+          window.setRainMode(targetMode);
+          rainDropdown.classList.remove('active');
+        });
+      });
+    }
+  }
 
 });
 

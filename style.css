@@ -113,6 +113,16 @@ a:hover {
   pointer-events: none;
 }
 
+/* Atmospheric Falling Rain Canvas Layer */
+.rain-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Layout Utilities */
 .wrap {
   max-width: 1100px;
@@ -215,6 +225,116 @@ a:hover {
   border-color: var(--cyan);
   box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
   transform: translateY(-1px);
+}
+
+/* Atmospheric Rain Control Toggle & Dropdown UI */
+.rain-ctrl-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.btn--rain {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn--rain:hover {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: var(--cyan);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn--rain.rain-active {
+  border-color: rgba(0, 240, 255, 0.7);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+}
+
+.btn--rain.rain-off {
+  opacity: 0.65;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.rain-btn-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 0.68rem;
+  background: rgba(0, 240, 255, 0.2);
+  color: var(--cyan);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.btn--rain.rain-off .rain-btn-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.rain-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: rgba(10, 14, 24, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 8px;
+  padding: 6px;
+  min-width: 175px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.2);
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 1000;
+}
+
+.rain-dropdown.active {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+
+.rain-drop-item {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rain-drop-item:hover, .rain-drop-item.active {
+  background: rgba(0, 240, 255, 0.16);
+  color: #ffffff;
+}
+
+.rain-drop-item.active::after {
+  content: '✓';
+  color: var(--cyan);
+  font-weight: 700;
 }
 
 .btn--hero-primary {
@@ -1829,5 +1949,12 @@ a:hover {
   }
   .profile-frame__img {
     height: 380px;
+  }
+  .rain-btn-text {
+    display: none;
+  }
+  .btn--rain {
+    padding: 7px 10px;
+    gap: 4px;
   }
 }

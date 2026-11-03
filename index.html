@@ -16,8 +16,9 @@
 </head>
 <body>
 
-<!-- Ambient background 3D constellation & subtle scanline -->
+<!-- Ambient background 3D constellation, falling rain layer & subtle scanline -->
 <canvas id="ambient3DCanvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+<canvas id="rainCanvas" class="rain-canvas" aria-hidden="true"></canvas>
 <div class="fw-backdrop" aria-hidden="true"></div>
 <div class="scanline-overlay" aria-hidden="true"></div>
 
@@ -42,6 +43,21 @@
     </nav>
 
     <div class="topbar__actions">
+      <!-- Atmospheric Rain Mode Switcher -->
+      <div class="rain-ctrl-wrap">
+        <button class="btn btn--rain rain-active" id="rainToggleBtn" title="Atmospheric Rain Effect (Click to cycle modes: Cyber, Storm, Matrix, Off)">
+          <span class="rain-btn-icon">🌧️</span>
+          <span class="rain-btn-text">Rain</span>
+          <span class="rain-btn-badge" id="rainModeBadge">CYBER</span>
+        </button>
+        <div class="rain-dropdown" id="rainDropdown">
+          <button class="rain-drop-item active" data-rain="cyber">⚡ Cyber Rain</button>
+          <button class="rain-drop-item" data-rain="storm">🌩️ Neon Storm</button>
+          <button class="rain-drop-item" data-rain="matrix">💻 Matrix Rain</button>
+          <button class="rain-drop-item" data-rain="off">🚫 Turn Off</button>
+        </div>
+      </div>
+
       <button class="btn btn--cli" id="cliToggleBtn" title="Toggle Interactive UNIX Terminal">
         <span class="btn__icon">$_</span> CLI Shell
       </button>

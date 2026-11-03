@@ -35,9 +35,20 @@ A state-of-the-art, high-performance **3D WebGL Portfolio** built with **React 1
 
 ### 4. 💻 Interactive UNIX CLI Terminal Shell
 - Built-in terminal drawer (`$_ CLI Shell`) with dynamic shell commands:
-  - `help`, `cat resume`, `cat skills`, `cat experience`, `cat education`, `cat publication`, `git repos`, `run api`, `3d mode <name>`, `theme <color>`, `contact`, `clear`, `matrix`.
+  - `help`, `cat resume`, `cat skills`, `cat experience`, `cat education`, `cat publication`, `git repos`, `run api`, `rain <mode>`, `3d mode <name>`, `theme <color>`, `contact`, `clear`, `matrix`.
 
-### 5. 🔊 Web Audio API Synthesizer
+### 5. 🌧️ Atmospheric Falling Rain & Cyber Weather Engine
+- **Multi-Depth 3D Parallax Rain**: Realistic falling raindrops rendered across foreground, midground, and background layers with custom cyan/azure neon streaks.
+- **Dynamic Wind & Physics**: Rain angle dynamically deflects based on cursor movement and natural ambient breeze oscillations.
+- **Surface Impact Splash Physics**: Expanding ground ripple ellipses and bouncing spark droplet particles upon impact.
+- **4 Switchable Weather Modes**:
+  - `⚡ Cyber Rain`: Default futuristic neon-cyan rain streaks with high-speed gradient trails.
+  - `🌩️ Neon Storm`: High-density storm downpour with gale wind gusts and ambient sheet lightning flashes.
+  - `💻 Matrix Rain`: Cascading vertical streams of digital binary, hex, and Java engineering tokens (`class`, `void`, `int`, `0x4F`, `{}`).
+  - `🚫 Off`: Instantly toggle or pause rain anytime.
+- **Interactive Controls**: Topbar quick-cycle toggle button, dropdown mode menu, and UNIX CLI commands (`rain cyber`, `rain storm`, `rain matrix`, `rain off`).
+
+### 6. 🔊 Web Audio API Synthesizer
 - Interactive sound effects (click chirps, pulse shockwave hums, beep responses) with quick Mute/Unmute toggle.
 
 ---

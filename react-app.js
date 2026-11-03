@@ -571,9 +571,190 @@ function AmbientBackground3D({ themeColor }) {
 }
 
 // --------------------------------------------------------------------------
+// RainBackground Component
+// --------------------------------------------------------------------------
+function RainBackground({ rainMode = 'cyber' }) {
+  const rainRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = rainRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    let currentWind = -0.12;
+    let targetWind = -0.12;
+    let lastMouseX = 0;
+    let lightningAlpha = 0;
+    let nextLightning = Date.now() + 14000;
+
+    const isMobile = window.innerWidth < 768;
+    const count = rainMode === 'storm' ? (isMobile ? 150 : 300) : (isMobile ? 85 : 180);
+
+    let drops = [];
+    let ripples = [];
+
+    for (let i = 0; i < count; i++) {
+      const z = Math.random() * 0.75 + 0.25;
+      drops.push({
+        x: Math.random() * (width + 400) - 200,
+        y: Math.random() * (height + 200) - 100,
+        z: z,
+        length: (22 + Math.random() * 26) * z,
+        speed: (15 + Math.random() * 12) * z,
+        thickness: (0.75 + Math.random() * 0.95) * z,
+        alpha: (0.25 + Math.random() * 0.6) * z
+      });
+    }
+
+    const fontSize = 14;
+    let matrixCols = Math.floor(width / fontSize);
+    let matrixDrops = [];
+    const matrixGlyphs = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈJAVA0x4F{}();=>intvoid';
+    for (let i = 0; i < matrixCols; i++) {
+      matrixDrops.push({
+        y: Math.floor(Math.random() * -30),
+        speed: Math.random() * 0.5 + 0.8
+      });
+    }
+
+    const handleResize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      matrixCols = Math.floor(width / fontSize);
+    };
+    window.addEventListener('resize', handleResize);
+
+    const handleMouseMove = (e) => {
+      const dx = (e.clientX - lastMouseX) * 0.0025;
+      lastMouseX = e.clientX;
+      targetWind = -0.12 + Math.max(-0.4, Math.min(0.4, dx));
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    let reqId;
+    let lastMatrix = 0;
+
+    const render = (timestamp) => {
+      reqId = requestAnimationFrame(render);
+      if (rainMode === 'off') {
+        ctx.clearRect(0, 0, width, height);
+        return;
+      }
+
+      currentWind += (targetWind - currentWind) * 0.04;
+      targetWind += (-0.12 - targetWind) * 0.02;
+
+      if (rainMode === 'matrix') {
+        ctx.fillStyle = 'rgba(7, 9, 14, 0.16)';
+        ctx.fillRect(0, 0, width, height);
+        if (timestamp - lastMatrix > 45) {
+          lastMatrix = timestamp;
+          ctx.font = `600 ${fontSize}px "IBM Plex Mono", monospace`;
+          for (let i = 0; i < matrixCols; i++) {
+            const col = matrixDrops[i];
+            const x = i * fontSize;
+            const y = col.y * fontSize;
+            const g = matrixGlyphs[Math.floor(Math.random() * matrixGlyphs.length)];
+            if (y > 0 && y < height + 40) {
+              ctx.fillStyle = '#ffffff';
+              ctx.fillText(g, x, y);
+              ctx.fillStyle = 'rgba(0, 240, 255, 0.75)';
+              ctx.fillText(g, x, y - fontSize);
+            }
+            col.y += col.speed;
+            if (col.y * fontSize > height && Math.random() > 0.975) {
+              col.y = Math.floor(Math.random() * -15);
+            }
+          }
+        }
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (rainMode === 'storm') {
+        const now = Date.now();
+        if (now > nextLightning) {
+          lightningAlpha = 0.18;
+          nextLightning = now + 12000 + Math.random() * 14000;
+        }
+        if (lightningAlpha > 0.005) {
+          ctx.fillStyle = `rgba(180, 235, 255, ${lightningAlpha})`;
+          ctx.fillRect(0, 0, width, height);
+          lightningAlpha *= 0.86;
+        }
+      }
+
+      const speedMult = rainMode === 'storm' ? 1.6 : 1.0;
+      const sinA = Math.sin(currentWind);
+      const cosA = Math.cos(currentWind);
+
+      ctx.lineCap = 'round';
+      for (let i = 0; i < drops.length; i++) {
+        const d = drops[i];
+        d.x += sinA * d.speed * speedMult;
+        d.y += cosA * d.speed * speedMult;
+
+        const tailX = d.x - sinA * d.length;
+        const tailY = d.y - cosA * d.length;
+
+        const grad = ctx.createLinearGradient(tailX, tailY, d.x, d.y);
+        grad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+        grad.addColorStop(0.65, `rgba(0, 240, 255, ${d.alpha * 0.4})`);
+        grad.addColorStop(1, `rgba(200, 250, 255, ${d.alpha})`);
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = d.thickness;
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(d.x, d.y);
+        ctx.stroke();
+
+        if (d.y > height + 10) {
+          if (ripples.length < 30) {
+            ripples.push({ x: d.x, y: height - 2, rx: 1, ry: 0.35, maxR: (5 + Math.random() * 7) * d.z, alpha: 0.7 * d.z });
+          }
+          d.y = -d.length - Math.random() * 40;
+          d.x = Math.random() * (width + 400) - 200;
+        }
+        if (d.x < -200) d.x = width + 150;
+        if (d.x > width + 200) d.x = -150;
+      }
+
+      for (let r = ripples.length - 1; r >= 0; r--) {
+        const rp = ripples[r];
+        rp.rx += 0.55;
+        rp.ry += 0.22;
+        rp.alpha -= 0.035;
+        if (rp.alpha <= 0 || rp.rx >= rp.maxR) {
+          ripples.splice(r, 1);
+          continue;
+        }
+        ctx.strokeStyle = `rgba(0, 240, 255, ${rp.alpha * 0.6})`;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.ellipse(rp.x, rp.y, rp.rx, rp.ry, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    };
+    render(0);
+
+    return () => {
+      cancelAnimationFrame(reqId);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [rainMode]);
+
+  return <canvas ref={rainRef} className="rain-canvas" aria-hidden="true" />;
+}
+
+// --------------------------------------------------------------------------
 // Navigation Bar Component
 // --------------------------------------------------------------------------
-function Navbar({ onOpenTerminal, soundEnabled, setSoundEnabled, themeColor, setThemeColor }) {
+function Navbar({ onOpenTerminal, soundEnabled, setSoundEnabled, themeColor, setThemeColor, rainMode, setRainMode, onShowToast }) {
   const [copied, setCopied] = useState(false);
 
   const toggleSound = () => {
@@ -587,6 +768,23 @@ function Navbar({ onOpenTerminal, soundEnabled, setSoundEnabled, themeColor, set
     const themes = ['cyan', 'green', 'purple', 'amber'];
     const nextIdx = (themes.indexOf(themeColor) + 1) % themes.length;
     setThemeColor(themes[nextIdx]);
+  };
+
+  const cycleRain = () => {
+    soundFX.playClick();
+    const modes = ['cyber', 'storm', 'matrix', 'off'];
+    const nextIdx = (modes.indexOf(rainMode) + 1) % modes.length;
+    const nextMode = modes[nextIdx];
+    setRainMode(nextMode);
+    if (onShowToast) {
+      const labels = {
+        cyber: '⚡ Cyber Neon Rain Active',
+        storm: '🌩️ Neon Thunderstorm Active',
+        matrix: '💻 Matrix Code Rain Active',
+        off: '🚫 Rain Disabled'
+      };
+      onShowToast(labels[nextMode] || `Rain Mode: ${nextMode}`);
+    }
   };
 
   return (
@@ -612,6 +810,11 @@ function Navbar({ onOpenTerminal, soundEnabled, setSoundEnabled, themeColor, set
         </nav>
 
         <div className="topbar__actions">
+          {/* Rain Mode Switcher */}
+          <button className={`btn btn--rain ${rainMode !== 'off' ? 'rain-active' : 'rain-off'}`} onClick={cycleRain} title={`Atmospheric Rain: ${rainMode.toUpperCase()} (Click to toggle modes)`}>
+            🌧️ <span className="rain-btn-text">Rain</span> <span className="rain-btn-badge">{rainMode.toUpperCase()}</span>
+          </button>
+
           {/* Sound Synthesizer Toggle */}
           <button className={`btn btn--icon ${soundEnabled ? 'active' : ''}`} title={`Sound FX: ${soundEnabled ? 'ON' : 'OFF'}`} onClick={toggleSound}>
             {soundEnabled ? '🔊' : '🔇'}
@@ -1555,11 +1758,11 @@ function ArchitectureModal({ project, onClose }) {
 // --------------------------------------------------------------------------
 // UNIX Cyber Terminal Modal Drawer Component
 // --------------------------------------------------------------------------
-function CyberTerminal({ isOpen, onClose, setModelMode, setThemeColor, onShowToast }) {
+function CyberTerminal({ isOpen, onClose, setModelMode, setThemeColor, rainMode, setRainMode, onShowToast }) {
   const [inputVal, setInputVal] = useState('');
   const [history, setHistory] = useState([
     { type: 'dim', text: "ttyUSB0 — megathesh@cyber-core:~# initialized." },
-    { type: 'cyan', text: "Type 'help' for commands, 'cat resume', 'git repos', '3d mode', or 'run api'." }
+    { type: 'cyan', text: "Type 'help' for commands, 'cat resume', 'git repos', 'rain <mode>', or 'run api'." }
   ]);
   const bottomRef = useRef(null);
 
@@ -1592,6 +1795,7 @@ function CyberTerminal({ isOpen, onClose, setModelMode, setThemeColor, onShowToa
   cat publication - Peer-reviewed IJNIET publication
   git repos       - Output open-source repositories
   run api         - Simulate Java Full Stack MVC request dispatch
+  rain <mode>     - Switch atmospheric rain (cyber | storm | matrix | off)
   3d mode <name>  - Switch 3D model (core | galaxy | torus | matrix)
   theme <color>   - Switch neon theme (cyan | green | purple | amber)
   contact         - Display verified contact details
@@ -1682,8 +1886,55 @@ GitHub: github.com/Megatheshwaran-R`
         });
         break;
 
+      case 'rain':
+        newEntries.push({
+          type: 'cyan',
+          text: `ATMOSPHERIC RAIN SUBSYSTEM:
+Current Status: Active [Mode: ${(rainMode || 'CYBER').toUpperCase()}]
+Available Rain Commands:
+  • rain cyber  - Ultra-sleek neon cyan cyber rain streaks with splashes
+  • rain storm  - Intense neon thunderstorm with high wind & lightning pulses
+  • rain matrix - Digital streaming code rain (binary, hex & Java tokens)
+  • rain off    - Pause and disable atmospheric rain
+  • rain on     - Resume default cyber neon rain`
+        });
+        break;
+
+      case 'rain cyber':
+      case 'rain on':
+        setRainMode('cyber');
+        if (onShowToast) onShowToast('⚡ Cyber Neon Rain Active');
+        newEntries.push({ type: 'cyan', text: '🌧️ Switched rain mode to: CYBER NEON RAIN' });
+        break;
+
+      case 'rain storm':
+        setRainMode('storm');
+        if (onShowToast) onShowToast('🌩️ Neon Thunderstorm Active');
+        newEntries.push({ type: 'cyan', text: '🌩️ Switched rain mode to: NEON THUNDERSTORM' });
+        break;
+
+      case 'rain matrix':
+        setRainMode('matrix');
+        if (onShowToast) onShowToast('💻 Matrix Code Rain Active');
+        newEntries.push({ type: 'cyan', text: '💻 Switched rain mode to: MATRIX DIGITAL CODE RAIN' });
+        break;
+
+      case 'rain off':
+        setRainMode('off');
+        if (onShowToast) onShowToast('🚫 Atmospheric Rain Disabled');
+        newEntries.push({ type: 'dim', text: '🚫 Atmospheric rain disabled.' });
+        break;
+
       default:
-        if (cmd.startsWith('3d mode ')) {
+        if (cmd.startsWith('rain ')) {
+          const sub = cmd.split(' ')[1];
+          if (['cyber', 'storm', 'matrix', 'off'].includes(sub)) {
+            setRainMode(sub);
+            newEntries.push({ type: 'cyan', text: `Switched rain mode to: ${sub.toUpperCase()}` });
+          } else {
+            newEntries.push({ type: 'dim', text: `Unknown rain mode: '${sub}'. Choose: cyber | storm | matrix | off` });
+          }
+        } else if (cmd.startsWith('3d mode ')) {
           const mode = cmd.split(' ')[2];
           if (['core', 'galaxy', 'torus', 'matrix'].includes(mode)) {
             setModelMode(mode);
@@ -1758,6 +2009,7 @@ function App() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [selectedArchProject, setSelectedArchProject] = useState(null);
   const [soundEnabled, setSoundEnabled] = useState(false);
+  const [rainMode, setRainMode] = useState('cyber');
   const [toastMsg, setToastMsg] = useState(null);
 
   const showToast = (msg) => {
@@ -1794,6 +2046,7 @@ function App() {
     <div>
       {/* Ambient 3D Particle Starfield */}
       <AmbientBackground3D themeColor={themeColor} />
+      <RainBackground rainMode={rainMode} />
       <div className="scanline-overlay" aria-hidden="true" />
       <div className="ambient-glow-top" aria-hidden="true" />
 
@@ -1804,6 +2057,9 @@ function App() {
         setSoundEnabled={setSoundEnabled}
         themeColor={themeColor}
         setThemeColor={setThemeColor}
+        rainMode={rainMode}
+        setRainMode={setRainMode}
+        onShowToast={showToast}
       />
 
       {/* Hero Section */}
@@ -1902,6 +2158,8 @@ function App() {
         onClose={() => setTerminalOpen(false)}
         setModelMode={setModelMode}
         setThemeColor={setThemeColor}
+        rainMode={rainMode}
+        setRainMode={setRainMode}
         onShowToast={showToast}
       />
 
