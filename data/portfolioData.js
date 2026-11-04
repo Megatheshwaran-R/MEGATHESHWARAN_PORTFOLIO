@@ -113,31 +113,31 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "library-system",
-      title: "Online Library Management & Circulation Engine",
+      title: "Online Library Management System",
       category: "java",
       categoryLabel: "Core Java / JDBC",
-      status: "Eclipse IDE",
+      status: "Develop/Alpha_V1.0",
       statusColor: "cyan",
       image: "assets/college_bg.jpg",
-      description: "Comprehensive library management and book circulation application developed using Core Java and JDBC. Engineered a secure role-based login system (Admin vs Member), book inventory modules to add, delete, update, and search books, and configured transactional database connectivity with MySQL using PreparedStatements to ensure data consistency during check-in, checkout, and penalty calculations.",
-      tech: ["Core Java", "JDBC", "MySQL", "PreparedStatements", "Eclipse IDE", "ACID Transactions"],
-      githubUrl: "https://github.com/Megatheshwaran-R",
+      description: "Console-based Library Management System developed using Core Java and JDBC, integrated with a MySQL database. Features secure user registration and credential validation against MySQL tables, complete book CRUD workflows (Add, View, Update status, Delete by ID) implemented via Crud DAO, and parameterized SQL PreparedStatements ensuring ACID transactional data integrity.",
+      tech: ["Core Java", "JDBC", "MySQL", "PreparedStatements", "CRUD Operations", "User Authentication"],
+      githubUrl: "https://github.com/Megatheshwaran-R/Online-Library-Management-System",
       hasArchitecture: true,
       architecture: {
-        title: "Enterprise JDBC Persistence & Circulation State Engine",
-        subtitle: "CLI / View -> Service Layer -> DAO Implementation -> PreparedStatement -> MySQL ACID",
+        title: "Core Java & JDBC Architecture — Online Library Management System",
+        subtitle: "Console View (Maincode.java) -> Auth & Controller -> DAO (Crud.java) -> PreparedStatement -> MySQL (project1)",
         pipeline: [
-          { step: "01", name: "Role Authorization", desc: "Enforces Admin vs Student permission boundaries with salted password verification." },
-          { step: "02", name: "Inventory State", desc: "Queries real-time book copies; prevents over-allocation with atomic UPDATE locks." },
-          { step: "03", name: "PreparedStatements", desc: "All SQL transactions parameterized to completely neutralize SQL Injection attacks." },
-          { step: "04", name: "Fine Calculation", desc: "Automated cron formula calculates overdue charges: (ReturnDate - DueDate) * DailyRate." }
+          { step: "01", name: "User Registration & Auth", desc: "Validates user credentials against MySQL 'register' table via parameterized queries in project.java & Maincode.java." },
+          { step: "02", name: "Console CLI Controller", desc: "Interactive menu-driven terminal interface offering options for Add, View, Update availability, and Delete operations." },
+          { step: "03", name: "PreparedStatement DAO", desc: "Crud.java executes parameterized SQL statements ensuring complete immunity against SQL injection vulnerabilities." },
+          { step: "04", name: "Relational Persistence", desc: "Synchronizes book inventory (title, Author, genre, Publication_date, Availability_Status) with MySQL database." }
         ],
         metrics: [
-          { label: "DB Latency", value: "<8ms" },
-          { label: "Concurrency Safe", value: "ACID Guaranteed" },
-          { label: "SQLi Vulnerability", value: "Zero (Parameterized)" }
+          { label: "Query Latency", value: "<5ms" },
+          { label: "SQLi Protection", value: "100% Parameterized" },
+          { label: "Data Integrity", value: "ACID Guaranteed" }
         ],
-        safeguards: "Database connection rollback invoked automatically if any multi-table insert fails."
+        safeguards: "All SQL queries utilize PreparedStatement parameter binding; relational constraints prevent orphaned records and data corruption."
       }
     },
     {

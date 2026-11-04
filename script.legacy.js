@@ -631,17 +631,18 @@ X-Connection-Pool: HikariCP-Active
       `
     },
     'library-system': {
-      title: "Online Library Management & Circulation Engine",
-      subtitle: "Enterprise Record Administration & Multi-Role Data Governance",
+      title: "Online Library Management System",
+      subtitle: "Core Java & JDBC Data Governance Architecture",
       body: `
         <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); line-height:1.7;">
-          <h4 style="color:var(--cyan); margin-bottom:8px;">⚡ Enterprise Java Layered Architecture:</h4>
-          <p>Presentation Layer -> Service Business Logic -> <strong>Data Access Object (DAO) Pattern</strong> -> <strong>JDBC Connection Management (HikariCP)</strong> -> <strong>MySQL RDBMS</strong>.</p>
+          <h4 style="color:var(--cyan); margin-bottom:8px;">⚡ Core Java & JDBC Layered Architecture:</h4>
+          <p>Console CLI (<code>Maincode.java</code> / <code>project.java</code>) -> Authentication against <code>register</code> table -> <strong>Data Access Object (Crud.java DAO)</strong> -> <strong>PreparedStatement Parameter Binding</strong> -> <strong>MySQL Database (project1)</strong>.</p>
           
           <h4 style="color:var(--amber); margin:16px 0 8px;">📊 ACID & Security Safeguards:</h4>
           <ul>
-            <li><strong>SQL Injection Shielded:</strong> Parameterized <code>PreparedStatement</code> objects across all search, issue, and return queries.</li>
-            <li><strong>Transaction Isolation:</strong> Atomic book status transitions guarding inventory counts against concurrent race conditions.</li>
+            <li><strong>SQL Injection Shielded:</strong> Parameterized <code>PreparedStatement</code> objects across all user registration, login, add, view, update, and delete queries.</li>
+            <li><strong>CRUD Data Integrity:</strong> Strict type-safe operations managing book records (title, Author, genre, Publication_date, Availability_Status) with transactional commit guarantees.</li>
+            <li><strong>Repository:</strong> <a href="https://github.com/Megatheshwaran-R/Online-Library-Management-System" target="_blank" style="color:var(--cyan); text-decoration:underline;">Megatheshwaran-R/Online-Library-Management-System</a> (Branch: Develop/Alpha_V1.0)</li>
           </ul>
         </div>
       `
@@ -822,7 +823,7 @@ nothing to commit, working tree clean
           return out;
         }
       } catch (e) {}
-      return `<div class="fg-amber">* Iot_Energy_Monitoring_System (C++) -> https://github.com/Megatheshwaran-R/Iot_Energy_Monitoring_System</div>`;
+      return `<div class="fg-amber">* Iot_Energy_Monitoring_System (C++) -> https://github.com/Megatheshwaran-R/Iot_Energy_Monitoring_System\n* Online-Library-Management-System (Java) -> https://github.com/Megatheshwaran-R/Online-Library-Management-System</div>`;
     },
     'cat fullstack': () => `
 <div class="fg-cyan">JAVA FULL STACK DEVELOPER ARCHITECTURE STACK:</div>

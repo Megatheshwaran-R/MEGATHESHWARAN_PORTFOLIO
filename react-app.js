@@ -1302,10 +1302,91 @@ function ProjectsShowcase({ onInspectArchitecture, onShowToast }) {
               onMouseMove={handleCardMouseMove}
               onMouseLeave={handleCardMouseLeave}
             >
-              {proj.image && (
-                <div className="project-card__img-wrap">
-                  <img src={proj.image} alt={proj.title} className="project-card__img" />
+              {proj.id === 'library-system' ? (
+                <div className="project-card__code-banner project-card__code-banner--java">
+                  <div className="code-banner__top">
+                    <span className="code-banner__dots"><i className="cb-dot cb-dot--red"></i><i className="cb-dot cb-dot--yellow"></i><i className="cb-dot cb-dot--green"></i></span>
+                    <span className="code-banner__filename">Maincode.java ── Crud.java</span>
+                    <span className="code-banner__pill code-banner__pill--cyan">Develop/Alpha_V1.0</span>
+                  </div>
+                  <div className="code-banner__diagram">
+                    <div className="cb-step"><span className="cb-icon">👤</span><span>User Auth</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--accent"><span className="cb-icon">⚡</span><span>Crud DAO</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--db"><span className="cb-icon">🗄️</span><span>MySQL (project1)</span></div>
+                  </div>
+                  <div className="code-banner__meta">
+                    <span>SQL Injection Shielded</span>
+                    <span>ACID Safe CRUD</span>
+                  </div>
                 </div>
+              ) : proj.id === 'smart-garbage' ? (
+                <div className="project-card__code-banner project-card__code-banner--iot">
+                  <div className="code-banner__top">
+                    <span className="code-banner__dots"><i className="cb-dot cb-dot--red"></i><i className="cb-dot cb-dot--yellow"></i><i className="cb-dot cb-dot--green"></i></span>
+                    <span className="code-banner__filename">hcsr04_telemetry.ino</span>
+                    <span className="code-banner__pill code-banner__pill--cyan">ThingSpeak API</span>
+                  </div>
+                  <div className="code-banner__diagram">
+                    <div className="cb-step"><span className="cb-icon">📡</span><span>HC-SR04 Echo</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step"><span className="cb-icon">📶</span><span>NodeMCU Wi-Fi</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--cloud"><span className="cb-icon">☁️</span><span>MATLAB Alert</span></div>
+                  </div>
+                  <div className="code-banner__meta">
+                    <span>Acoustic Ranging: 40kHz</span>
+                    <span>Threshold: &gt;85% Dispatch</span>
+                  </div>
+                </div>
+              ) : proj.id === 'customer-mgmt' ? (
+                <div className="project-card__code-banner project-card__code-banner--mvc">
+                  <div className="code-banner__top">
+                    <span className="code-banner__dots"><i className="cb-dot cb-dot--red"></i><i className="cb-dot cb-dot--yellow"></i><i className="cb-dot cb-dot--green"></i></span>
+                    <span className="code-banner__filename">CustomerServlet.java ── web.xml</span>
+                    <span className="code-banner__pill code-banner__pill--purple">Tomcat MVC</span>
+                  </div>
+                  <div className="code-banner__diagram">
+                    <div className="cb-step"><span className="cb-icon">🖥️</span><span>JSP View</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step"><span className="cb-icon">⚙️</span><span>Servlet Dispatcher</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--db"><span className="cb-icon">🗄️</span><span>MySQL DB</span></div>
+                  </div>
+                  <div className="code-banner__meta">
+                    <span>MVC Architecture</span>
+                    <span>Atomic Records CRUD</span>
+                  </div>
+                </div>
+              ) : proj.id === 'spring-api' ? (
+                <div className="project-card__code-banner project-card__code-banner--spring">
+                  <div className="code-banner__top">
+                    <span className="code-banner__dots"><i className="cb-dot cb-dot--red"></i><i className="cb-dot cb-dot--yellow"></i><i className="cb-dot cb-dot--green"></i></span>
+                    <span className="code-banner__filename">OrderController.java ── JWT</span>
+                    <span className="code-banner__pill code-banner__pill--green">Spring Boot 3</span>
+                  </div>
+                  <div className="code-banner__diagram">
+                    <div className="cb-step"><span className="cb-icon">🔐</span><span>Bearer JWT</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--accent"><span className="cb-icon">⚡</span><span>RestController</span></div>
+                    <span className="cb-arrow">➔</span>
+                    <div className="cb-step cb-step--spring"><span className="cb-icon">🍃</span><span>Hibernate JPA</span></div>
+                  </div>
+                  <div className="code-banner__meta">
+                    <span>Role-Based Access (RBAC)</span>
+                    <span>Sub-15ms Latency</span>
+                  </div>
+                </div>
+              ) : (
+                proj.image && (
+                  <div className="project-card__img-wrap">
+                    <img src={proj.image} alt={proj.title} className="project-card__img" />
+                    <div className="img-wrap__overlay-badge">
+                      <span className="pulse-dot"></span> {proj.status}
+                    </div>
+                  </div>
+                )
               )}
               <div className="project-card__body">
                 <div className="project-card__header">
@@ -1400,10 +1481,10 @@ function GitHubTelemetry() {
       html_url: "https://github.com/Megatheshwaran-R"
     },
     {
-      name: "library-management-engine",
-      description: "Core Java book inventory and circulation engine featuring role-based privileges, automated overdue fines, and PreparedStatement persistence.",
-      language: "Core Java / JDBC",
-      html_url: "https://github.com/Megatheshwaran-R"
+      name: "Online-Library-Management-System",
+      description: "Console-based Library Management System developed using Core Java and JDBC integrated with MySQL database. Implements user registration, credential authentication, and full CRUD book catalog management.",
+      language: "Java / JDBC",
+      html_url: "https://github.com/Megatheshwaran-R/Online-Library-Management-System"
     }
   ]);
 
@@ -1853,7 +1934,7 @@ Diploma in EEE (2018-2021) - Kongunadu Polytechnic (94.0% Distinction)`
           type: 'output',
           text: `1. Iot_Energy_Monitoring_System (C++ / Arduino) - IJNIET Published
 2. customer-information-system (Java / MVC Servlets)
-3. library-management-engine (Core Java / JDBC)`
+3. Online-Library-Management-System (Core Java / JDBC) - git@github.com:Megatheshwaran-R/Online-Library-Management-System.git`
         });
         break;
 

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
@@ -88,6 +88,10 @@
             <span class="kpi-card__val">IJNIET</span>
             <span class="kpi-card__lbl">Peer-Reviewed Journal Publication</span>
           </div>
+          <div class="kpi-card kpi-card--amber">
+            <span class="kpi-card__val">IAO Verified</span>
+            <span class="kpi-card__lbl">Global Java Full Stack Accredited</span>
+          </div>
         </div>
 
         <!-- ACTION BUTTONS -->
@@ -108,6 +112,10 @@
         <div class="profile-card">
           <div class="profile-frame">
             <div class="profile-frame__glow"></div>
+            <div class="profile-frame__telemetry">
+              <span class="telemetry-chip telemetry-chip--left"><span class="pulse-dot"></span> Immediate Joiner</span>
+              <span class="telemetry-chip telemetry-chip--right">☕ Java Full Stack</span>
+            </div>
             <img src="assets/megatheshwaran_portrait.png" alt="Megatheshwaran R — Java Full Stack Developer" class="profile-frame__img">
           </div>
 
@@ -307,6 +315,7 @@
               <div class="repo-card__name">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                 <span>Iot_Energy_Monitoring_System</span>
+                <span class="repo-card__branch"><span class="pulse-dot"></span> main</span>
               </div>
               <div class="repo-card__desc">
                 Developed an IoT-based energy monitoring and management system for telecom operators and Remote Computer Rooms (RCR) using the Blynk server to monitor energy consumption. Published in IJNIET.
@@ -325,6 +334,7 @@
               <div class="repo-card__name">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                 <span>customer-information-system</span>
+                <span class="repo-card__branch"><span class="pulse-dot"></span> main</span>
               </div>
               <div class="repo-card__desc">
                 Multi-tier enterprise customer administration system with Java Servlets, JSP, JDBC connection pooling, and transactional MySQL relational database.
@@ -342,17 +352,18 @@
             <div>
               <div class="repo-card__name">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                <span>library-management-engine</span>
+                <span>Online-Library-Management-System</span>
+                <span class="repo-card__branch repo-card__branch--cyan"><span class="pulse-dot"></span> Develop/Alpha_V1.0</span>
               </div>
               <div class="repo-card__desc">
-                Core Java book inventory and circulation engine featuring role-based privileges, automated overdue fines, and PreparedStatement persistence.
+                Console-based Library Management System developed using Core Java and JDBC integrated with MySQL database. Implements user registration, credential authentication, and full CRUD book catalog management.
               </div>
             </div>
             <div class="repo-card__meta">
               <span class="lang-badge">
-                <span class="lang-dot" style="background:#ffaa00;"></span> Core Java / JDBC
+                <span class="lang-dot" style="background:#ffaa00;"></span> Java / JDBC
               </span>
-              <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">View Repo →</a>
+              <a href="https://github.com/Megatheshwaran-R/Online-Library-Management-System" target="_blank" class="btn btn--sm btn--github">View Repo →</a>
             </div>
           </div>
         </div>
@@ -452,6 +463,9 @@
         <article class="project-card" data-category="iot">
           <div class="project-card__img-wrap">
             <img src="assets/iot_sensor_visual.jpg" alt="IoT Energy Saving in Telecom Computer Rooms" class="project-card__img">
+            <div class="img-wrap__overlay-badge">
+              <span class="pulse-dot"></span> IJNIET Published Paper • Blynk MQTT Telemetry
+            </div>
           </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--green">IoT / Cloud Telemetry</span>
@@ -472,6 +486,24 @@
 
         <!-- PROJECT 2: SMART GARBAGE MONITORING -->
         <article class="project-card" data-category="iot">
+          <div class="project-card__code-banner project-card__code-banner--iot">
+            <div class="code-banner__top">
+              <span class="code-banner__dots"><i class="cb-dot cb-dot--red"></i><i class="cb-dot cb-dot--yellow"></i><i class="cb-dot cb-dot--green"></i></span>
+              <span class="code-banner__filename">hcsr04_telemetry.ino</span>
+              <span class="code-banner__pill code-banner__pill--cyan">ThingSpeak API</span>
+            </div>
+            <div class="code-banner__diagram">
+              <div class="cb-step"><span class="cb-icon">📡</span><span>HC-SR04 Echo</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step"><span class="cb-icon">📶</span><span>NodeMCU Wi-Fi</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--cloud"><span class="cb-icon">☁️</span><span>MATLAB Alert</span></div>
+            </div>
+            <div class="code-banner__meta">
+              <span>Acoustic Ranging: 40kHz</span>
+              <span>Threshold: &gt;85% Dispatch</span>
+            </div>
+          </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--cyan">IoT / Smart City</span>
             <span class="project-status">ThingSpeak Cloud</span>
@@ -493,6 +525,9 @@
         <article class="project-card" data-category="matlab">
           <div class="project-card__img-wrap">
             <img src="assets/license_plate_visual.jpg" alt="MATLAB License Plate Recognition" class="project-card__img">
+            <div class="img-wrap__overlay-badge">
+              <span class="pulse-dot" style="background:var(--amber); box-shadow:0 0 8px var(--amber);"></span> Computer Vision Pipeline • Excel Engg Symposium
+            </div>
           </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--amber">Computer Vision / MATLAB</span>
@@ -513,25 +548,61 @@
 
         <!-- PROJECT 4: ONLINE LIBRARY MANAGEMENT SYSTEM -->
         <article class="project-card" data-category="java">
+          <div class="project-card__code-banner project-card__code-banner--java">
+            <div class="code-banner__top">
+              <span class="code-banner__dots"><i class="cb-dot cb-dot--red"></i><i class="cb-dot cb-dot--yellow"></i><i class="cb-dot cb-dot--green"></i></span>
+              <span class="code-banner__filename">Maincode.java ── Crud.java</span>
+              <span class="code-banner__pill code-banner__pill--cyan">Develop/Alpha_V1.0</span>
+            </div>
+            <div class="code-banner__diagram">
+              <div class="cb-step"><span class="cb-icon">👤</span><span>User Auth / Login</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--accent"><span class="cb-icon">⚡</span><span>Crud DAO</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--db"><span class="cb-icon">🗄️</span><span>MySQL (project1)</span></div>
+            </div>
+            <div class="code-banner__meta">
+              <span>SQL Injection Shielded</span>
+              <span>ACID Safe CRUD</span>
+            </div>
+          </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--cyan">Core Java / JDBC</span>
-            <span class="project-status">Eclipse IDE</span>
+            <span class="project-status">Develop/Alpha_V1.0</span>
           </div>
-          <h3 class="project-card__title">Online Library Management & Circulation Engine</h3>
+          <h3 class="project-card__title">Online Library Management System</h3>
           <p class="project-card__desc">
-            Comprehensive library management and book circulation application developed using Core Java and JDBC. Engineered a secure role-based login system (Admin vs Member), book inventory modules to add, delete, update, and search books, and configured transactional database connectivity with MySQL using PreparedStatements to ensure data consistency during check-in, checkout, and penalty calculations.
+            Console-based Library Management System developed using Core Java and JDBC, integrated with a MySQL database. Features secure user registration and credential validation against MySQL tables, complete book CRUD workflows (Add, View, Update status, Delete by ID) implemented via Crud DAO, and parameterized SQL PreparedStatements ensuring ACID transactional data integrity.
           </p>
           <div class="project-card__tech">
-            <span>Core Java</span><span>JDBC</span><span>MySQL</span><span>PreparedStatements</span><span>Eclipse IDE</span><span>ACID Transactions</span>
+            <span>Core Java</span><span>JDBC</span><span>MySQL</span><span>PreparedStatements</span><span>CRUD Operations</span><span>User Authentication</span>
           </div>
           <div class="project-card__footer">
             <button class="btn btn--inspect" onclick="openArchitectureModal('library-system')">Inspect Architecture</button>
-            <a href="https://github.com/Megatheshwaran-R" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
+            <a href="https://github.com/Megatheshwaran-R/Online-Library-Management-System" target="_blank" class="btn btn--sm btn--github">GitHub Repo →</a>
           </div>
         </article>
 
         <!-- PROJECT 5: CUSTOMER INFORMATION MANAGEMENT SYSTEM -->
         <article class="project-card" data-category="java">
+          <div class="project-card__code-banner project-card__code-banner--mvc">
+            <div class="code-banner__top">
+              <span class="code-banner__dots"><i class="cb-dot cb-dot--red"></i><i class="cb-dot cb-dot--yellow"></i><i class="cb-dot cb-dot--green"></i></span>
+              <span class="code-banner__filename">CustomerServlet.java ── web.xml</span>
+              <span class="code-banner__pill code-banner__pill--purple">Tomcat MVC</span>
+            </div>
+            <div class="code-banner__diagram">
+              <div class="cb-step"><span class="cb-icon">🖥️</span><span>JSP View</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step"><span class="cb-icon">⚙️</span><span>Servlet Dispatcher</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--db"><span class="cb-icon">🗄️</span><span>MySQL DB</span></div>
+            </div>
+            <div class="code-banner__meta">
+              <span>MVC Architecture</span>
+              <span>Atomic Records CRUD</span>
+            </div>
+          </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--purple">Java Web MVC / Servlets</span>
             <span class="project-status">Apache Tomcat</span>
@@ -551,6 +622,24 @@
 
         <!-- PROJECT 6: SPRING BOOT E-COMMERCE API -->
         <article class="project-card" data-category="java">
+          <div class="project-card__code-banner project-card__code-banner--spring">
+            <div class="code-banner__top">
+              <span class="code-banner__dots"><i class="cb-dot cb-dot--red"></i><i class="cb-dot cb-dot--yellow"></i><i class="cb-dot cb-dot--green"></i></span>
+              <span class="code-banner__filename">OrderController.java ── JWT</span>
+              <span class="code-banner__pill code-banner__pill--green">Spring Boot 3</span>
+            </div>
+            <div class="code-banner__diagram">
+              <div class="cb-step"><span class="cb-icon">🔐</span><span>Bearer JWT Auth</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--accent"><span class="cb-icon">⚡</span><span>RestController</span></div>
+              <span class="cb-arrow">➔</span>
+              <div class="cb-step cb-step--spring"><span class="cb-icon">🍃</span><span>Hibernate JPA</span></div>
+            </div>
+            <div class="code-banner__meta">
+              <span>Role-Based Access (RBAC)</span>
+              <span>Sub-15ms Latency</span>
+            </div>
+          </div>
           <div class="project-card__header">
             <span class="project-tag project-tag--green">Spring Boot / Microservices</span>
             <span class="project-status">REST / JWT Security</span>
